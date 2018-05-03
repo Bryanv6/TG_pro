@@ -3,7 +3,7 @@
 *.classpath
 *.class
 *.settings
-
+*.iml
 *.project
 
 # Package Files #
