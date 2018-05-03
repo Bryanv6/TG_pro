@@ -1,7 +1,15 @@
 *.idea
 
 *.classpath
-
+*.class
 *.settings
 
 *.project
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
