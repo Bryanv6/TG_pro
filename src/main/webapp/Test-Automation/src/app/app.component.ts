@@ -8,11 +8,17 @@ import { TestService } from './test.service';
 })
 export class AppComponent {
   title = 'Test Automation';
-  webAppURL ='Web App URL';
+  webAppURL ='https://dev.assignforce.revaturelabs.com/home';
+  testResult;
   constructor(private testService: TestService){}
   setUrl()
   {
     this.testService.setUrl(this.webAppURL);
+  }
+
+  getResult()
+  {
+    this.testService.getData();
   }
     
 }

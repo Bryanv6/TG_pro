@@ -6,21 +6,28 @@ import 'rxjs/add/operator/map';
 export class TestService
 {
     constructor(private http: Http){}
-    private url="";
-    private paramURL="";
+    private apiURL="/TG_Servlet";
+    private paramURL="https://dev.assignforce.revaturelabs.com/home";
+    data: any;
   /*getTestResults method takes url as param, 
   passes it to $http.getmethod and maps response back as json object*/
-    getTestResults(url)
+    getTestResults(apiURL)
     {
-      this.http.get(url).
+      this.data = this.http.get(this.apiURL).
       map(
         (response) => response.json()
       );
     }
+
     //set webappURL param if desired
     setUrl(webAppURL: string)
     {
       this.paramURL=webAppURL;
+    }
+
+    getData()
+    {
+      return this.data;
     }
 
 }
