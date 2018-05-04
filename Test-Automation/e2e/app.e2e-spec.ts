@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('gator-test-app App', () => {
+describe('test-automation App', () => {
   let page: AppPage;
 
   beforeEach(() => {
