@@ -4,4 +4,15 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+    <servlet-name>TG_Servlet</servlet-name>
+    <display-name>TG_Servlet</display-name>
+    <servlet-class>request.TG_Servlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>TG_Servlet</servlet-name>
+    <url-pattern>/TG_Servlet/*</url-pattern>
+  </servlet-mapping>
 </web-app>
