@@ -8,9 +8,6 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-/**
- * Created by bryanvillegas on 5/4/18.
- */
 public class TG_Servlet extends HttpServlet {
 
     public TG_Servlet(){
