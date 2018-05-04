@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="TG_pro:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="TG_pro.war">
-      <element id="artifact" artifact-name="TG_pro:war exploded" />
-    </root>
-  </artifact>
-</component>
