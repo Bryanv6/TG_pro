@@ -16,12 +16,7 @@ public class TG_Servlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-        PrintWriter pw = res.getWriter();
-        pw.println("<html>\r\n" +
-                "<body>\r\n" +
-                "<h2>This text is from TG_Servlet!</h2>\r\n" +
-                "</body>\r\n" +
-                "</html>");
+        res.getWriter().append("You are in the api");
     }
 
     @Override
