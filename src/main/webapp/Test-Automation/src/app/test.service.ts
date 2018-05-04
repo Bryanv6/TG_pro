@@ -11,7 +11,7 @@ export class TestService
     data: any;
   /*getTestResults method takes url as param, 
   passes it to $http.getmethod and maps response back as json object*/
-    getTestResults(apiURL)
+    getTestResults()
     {
       this.data = this.http.get(this.apiURL).
       map(
@@ -20,7 +20,7 @@ export class TestService
     }
 
     //set webappURL param if desired
-    setUrl(webAppURL: string)
+    setParamURL(webAppURL: string)
     {
       this.paramURL=webAppURL;
     }
