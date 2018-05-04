@@ -145,7 +145,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var TestService = /** @class */ (function () {
     function TestService(http) {
         this.http = http;
-        this.apiURL = "/TG_Servlet";
+        this.apiURL = "https://api.github.com/users/seeschweiler";
         this.paramURL = "https://dev.assignforce.revaturelabs.com/home";
     }
     /*getTestResults method takes url as param,
