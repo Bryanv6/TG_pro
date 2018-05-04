@@ -15,4 +15,7 @@
     <servlet-name>TG_Servlet</servlet-name>
     <url-pattern>/TG_Servlet/*</url-pattern>
   </servlet-mapping>
+ <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
 </web-app>
