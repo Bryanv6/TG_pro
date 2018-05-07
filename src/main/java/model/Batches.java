@@ -1,22 +1,21 @@
 package model;
 
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 
 @Entity
 @Table(name="Batches")
 public class Batches {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+   // @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seqname")
+    //@SequenceGenerator(initialValue=1, sequenceName="seq_name", allocationSize=1, name="seqname")
+    //name, curriculum, focus, trainer, location
+
 
 
 }
