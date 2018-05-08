@@ -3,6 +3,7 @@ package model;
 
 import javax.persistence.*;
 
+
 import javax.persistence.Entity;
 
 @Entity
@@ -18,8 +19,7 @@ public class Batches {
     @Column(name="a_name", length=40)
     private String name;
 
-    @Column(name="curriculum", length=40)
-    private String name;
+   
 
 
 }
