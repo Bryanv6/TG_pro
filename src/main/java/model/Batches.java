@@ -14,8 +14,11 @@ public class Batches {
     private int id;
    // @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seqname")
     //@SequenceGenerator(initialValue=1, sequenceName="seq_name", allocationSize=1, name="seqname")
-    //name, curriculum, focus, trainer, location
+    //name, curriculum, focus, trainer, location, building, room, start date, end date
     @Column(name="a_name", length=40)
+    private String name;
+
+    @Column(name="curriculum", length=40)
     private String name;
 
 
