@@ -27,7 +27,7 @@ module.exports = ".button\r\n{\r\n   font-size: 24px;\r\n   background-color: re
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"text-align:center\">\n  <h1>\n    Welcome to {{ title }}!\n  </h1>\n  <input type=\"url\" placeholder={{webAppURL}}>\n  <button type=\"button\" (click)=\"getResult()\">Test</button>\n\n<div>\n  <!-- iterate through json object -->\n<!-- <li *ngFor=\"let t of json\">\n <span> <b>t.name</b> </span>\n  <span><b>t.result</b></span>\n</li> -->\n{{testResult}}\n</div>"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<div style=\"text-align:center\">\r\n  <h1>\r\n    Welcome to {{ title }}!\r\n  </h1>\r\n  <input type=\"url\" placeholder={{webAppURL}}>\r\n  <button type=\"button\" (click)= \"getResult()\" >Test</button>\r\n\r\n <div>\r\n<!--iterate through json object\r\n<li *ngFor=\"let t of testResult\">\r\n <span> <b>{{t.userId}}</b> </span>\r\n  <span><b>t.result</b></span>\r\n</li>  --> \r\n{{testResult}} \r\n</div> "
 
 /***/ }),
 
@@ -54,20 +54,26 @@ var AppComponent = /** @class */ (function () {
         this.testService = testService;
         this.title = 'Test Automation';
         this.webAppURL = 'https://dev.assignforce.revaturelabs.com/home';
-        this.testResult = this.testService.getData();
     }
     AppComponent.prototype.setWebAppURL = function (paramURL) {
-        //hardcoded webAppURL for now
-        this.testService.setParamURL(this.webAppURL);
+        //hardcoded webAppURL for now`1
+        // this.testService.setParamURL(this.webAppURL);
     };
     AppComponent.prototype.getResult = function () {
         this.testService.getTestResults();
+        this.gettestresult();
+        //console.log(this.testResult);
+    };
+    AppComponent.prototype.gettestresult = function () {
+        this.testResult = this.testService.httpdata;
+        console.log(this.testResult);
     };
     AppComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'app-root',
             template: __webpack_require__("./src/app/app.component.html"),
-            styles: [__webpack_require__("./src/app/app.component.css")]
+            styles: [__webpack_require__("./src/app/app.component.css")],
+            providers: [__WEBPACK_IMPORTED_MODULE_1__test_service__["a" /* TestService */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__test_service__["a" /* TestService */]])
     ], AppComponent);
@@ -142,24 +148,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var TestService = /** @class */ (function () {
     function TestService(http) {
         this.http = http;
-        this.apiURL = "https://api.github.com/users/seeschweiler";
+        this.apiURL = "http://localhost:8080/TG_pro/ty.do";
+        // private apiURL = 'https://jsonplaceholder.typicode.com/posts';
         this.paramURL = "https://dev.assignforce.revaturelabs.com/home";
     }
-    /*getTestResults method takes url as param,
-    passes it to $http.getmethod and maps response back as json object*/
+    //    getTestResults()
+    //    {
+    //      return this.http.get(this.apiURL)
+    //      .toPromise()
+    //      .then(response => response.json())
+    //    }
     TestService.prototype.getTestResults = function () {
-        this.data = this.http.get(this.apiURL).
-            map(function (response) { return response.json(); });
+        var _this = this;
+        return this.http.get(this.apiURL)
+            .map(function (response) { return response.json(); }).subscribe(function (data) {
+            _this.getData(data); // console.log(data);
+        });
     };
-    //set webappURL param if desired
-    TestService.prototype.setParamURL = function (webAppURL) {
-        this.paramURL = webAppURL;
-    };
-    TestService.prototype.getData = function () {
-        return this.data;
+    TestService.prototype.getData = function (data) {
+        this.httpdata = data;
+        return this.httpdata;
     };
     TestService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* Injectable */])(),
