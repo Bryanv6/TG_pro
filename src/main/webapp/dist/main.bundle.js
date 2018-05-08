@@ -152,7 +152,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var TestService = /** @class */ (function () {
     function TestService(http) {
         this.http = http;
-        this.apiURL = "http://localhost:8090/TG_pro/ty.do";
+        this.apiURL = "http://ec2-18-188-2-93.us-east-2.compute.amazonaws.com:8090/TG_pro/ty.do";
         // private apiURL = 'https://jsonplaceholder.typicode.com/posts';
         this.paramURL = "https://dev.assignforce.revaturelabs.com/home";
     }
