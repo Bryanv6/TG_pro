@@ -1,4 +1,4 @@
-package com.gator.webdriver;
+package webdriver;
 
 import java.io.File;
 import java.io.FileInputStream;
