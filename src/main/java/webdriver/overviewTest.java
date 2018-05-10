@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -23,23 +25,27 @@ public class overviewTest {
         System.out.println(name);
     }
 
-    @Test(priority = 0)
+    @Test
     public void overview_test(){
-        d = webdriver.openApp();
-        webdriver.trainerLogin();
+
         d.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 
         String name = d.findElement(By.xpath("//*[@id=\"view\"]/div/md-card/md-content/md-table-container/table")).getText();
 
         d.findElement(By.xpath("//*[@id=\"view\"]/div/md-card/md-content/md-table-container/table/thead/tr/th[1]")).click();
         System.out.println(name);
+        d.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
+        name = d.findElement(By.xpath("//*[@id=\"view\"]/div/md-card/md-content/md-table-container/table")).getText();
+        System.out.println(name);
     }
-    @Test
-    public void test2(){
-        d.findElement(By.xpath("//*[@id=\"view\"]/div/md-card/md-content/md-table-container/table/thead/tr/th[2]")).click();
+    @BeforeTest
+    public void beforeTest(){
+        d = webdriver.openApp();
+        webdriver.trainerLogin();
     }
-    @Test
-    public void test3(){
-        d.findElement(By.xpath("//*[@id=\"view\"]/div/md-card/md-content/md-table-container/table/thead/tr/th[3]")).click();
+    @AfterTest
+    public void afterTest(){
+        webdriver.logout();
     }
+
 }
