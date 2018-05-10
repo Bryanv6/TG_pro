@@ -13,31 +13,11 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 import webdriver.webdriver;
+import webdriver.OverviewPage;
 
 
 public class overviewTest {
     static WebDriver d;
-    public static void main(String[] args){
-        d = webdriver.openApp();
-        webdriver.trainerLogin();
-        String name = d.findElement(By.xpath("//*[@id=\"view\"]/div/md-card/md-content/md-table-container/table")).getText();
-
-        System.out.println(name);
-    }
-
-    @Test
-    public void overview_test(){
-
-        d.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-
-        String name = d.findElement(By.xpath("//*[@id=\"view\"]/div/md-card/md-content/md-table-container/table")).getText();
-
-        d.findElement(By.xpath("//*[@id=\"view\"]/div/md-card/md-content/md-table-container/table/thead/tr/th[1]")).click();
-        System.out.println(name);
-        d.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
-        name = d.findElement(By.xpath("//*[@id=\"view\"]/div/md-card/md-content/md-table-container/table")).getText();
-        System.out.println(name);
-    }
     @BeforeTest
     public void beforeTest(){
         d = webdriver.openApp();
@@ -46,6 +26,34 @@ public class overviewTest {
     @AfterTest
     public void afterTest(){
         webdriver.logout();
+    }
+
+    @Test
+    public void overview_test(){
+
+        d.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+        String name = OverviewPage.table(d).getText();
+        System.out.println(name);
+    }
+    @Test
+    public void test2(){
+        OverviewPage.names(d).click();
+    }
+    @Test
+    public void test3(){
+        OverviewPage.building(d).click();
+    }
+    @Test
+    public void test4(){
+        OverviewPage.curriculum(d).click();
+    }
+    @Test
+    public void test5(){
+        OverviewPage.location(d).click();
+    }
+    @Test
+    public void test6(){
+        OverviewPage.room(d).click();
     }
 
 }
