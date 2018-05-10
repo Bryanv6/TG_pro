@@ -23,16 +23,23 @@ public class overviewTest {
         System.out.println(name);
     }
 
-    @Test
+    @Test(priority = 0)
     public void overview_test(){
         d = webdriver.openApp();
         webdriver.trainerLogin();
         d.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+
         String name = d.findElement(By.xpath("//*[@id=\"view\"]/div/md-card/md-content/md-table-container/table")).getText();
-        //d.findElement(By.xpath("//img[@src='web/L001/images/arrow-up.svg']")).click();
-        WebElement mapObject = d.findElement(By.xpath("//*[name()='svg']/*[name()='path=M4 12l1.41 ']"));
-        Actions builder = new Actions(d);
-        builder.click(mapObject).build().perform();
+
+        d.findElement(By.xpath("//*[@id=\"view\"]/div/md-card/md-content/md-table-container/table/thead/tr/th[1]")).click();
         System.out.println(name);
+    }
+    @Test
+    public void test2(){
+        d.findElement(By.xpath("//*[@id=\"view\"]/div/md-card/md-content/md-table-container/table/thead/tr/th[2]")).click();
+    }
+    @Test
+    public void test3(){
+        d.findElement(By.xpath("//*[@id=\"view\"]/div/md-card/md-content/md-table-container/table/thead/tr/th[3]")).click();
     }
 }
