@@ -16,11 +16,13 @@ public class webdriver {
 	public static void main(String[] args) {
 		openApp();
 		trainerLogin();
+		//logout();
+		goTo_Batches();
+		goTo_Settings();
 		logout();
-		
 	
 	}
-	static void openApp() {
+	public static void openApp() {
 		
 		FileInputStream in;
 		try {
@@ -43,7 +45,7 @@ public class webdriver {
 		
 	}
 	
-	static void trainerLogin() {
+	public static void trainerLogin() {
 		String username = props.getProperty("username");
 		String password = props.getProperty("password");
 		d.findElement(By.id("username")).sendKeys(username);
@@ -52,7 +54,7 @@ public class webdriver {
 	
 	}
 	
-	static void VPLogin() {
+	public static void VPLogin() {
 		String usernameVP = props.getProperty("usernameVP");
 		String password = props.getProperty("passwordVP");
 		d.findElement(By.id("username")).sendKeys(usernameVP);
@@ -60,10 +62,41 @@ public class webdriver {
 		d.findElement(By.id("Login")).click();
 	}
 	
-	static void logout()
+	public static void goTo_Batches() {
+		d.get("https://dev.assignforce.revaturelabs.com/batches");
+	}
+	
+	public static void goTo_Locations() {
+		d.get("https://dev.assignforce.revaturelabs.com/locations");
+	}
+	
+	public static void goTo_Curricula() {
+		d.get("https://dev.assignforce.revaturelabs.com/curriculum");
+	}
+	
+	public static void goTo_Trainers() {
+		d.get("https://dev.assignforce.revaturelabs.com/trainers");
+	}
+	
+	public static void goTo_Profiles() {
+		d.get("https://dev.assignforce.revaturelabs.com/profile");
+	}
+	
+	public static void goTo_Reports() {
+		d.get("https://dev.assignforce.revaturelabs.com/reports");
+	}
+	
+	public static void goTo_Settings() {
+		d.get("https://dev.assignforce.revaturelabs.com/settings");
+	}
+	
+	public static void logout()
 	{
-		d.findElement(By.xpath("//li[@name='logout']")).click();
+		d.findElement(By.xpath("/html/body/div[1]/div[1]/ng-include/div/md-content/md-nav-bar/div/nav/ul/li[9]/button")).click();
 		d.close();
 	}
+	
+	
+	
 
 }
