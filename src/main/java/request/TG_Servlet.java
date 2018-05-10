@@ -23,7 +23,7 @@ public class TG_Servlet extends HttpServlet {
 	@Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
         
-<<<<<<< HEAD
+
 		/*JSONObject item = new JSONObject();
 		item.put("information", "test");
 		item.put("id", 3);
@@ -31,13 +31,13 @@ public class TG_Servlet extends HttpServlet {
         
         res.getWriter().append(String.valueOf(item));*/
 		new TestRunner();
-=======
+
 		
 		//The url of the test website is in this parameter - testapp (Pass to webdriver)
        // System.out.println(req.getParameter("testapp"));
         
         
-		//Assuming TestResult
+	/*	//Assuming TestResult
 		JSONObject item = new JSONObject();
 		item.put("Testname", "Login Test");
 		item.put("TestDescription", "If successful, Login goes to homepage");
@@ -48,7 +48,7 @@ public class TG_Servlet extends HttpServlet {
         //Appending result
         res.getWriter().append(String.valueOf(item));
        //res.getWriter().append(req.getParameter("testapp"));
->>>>>>> 546b195cacc85e63eadb0da33711761207227066
+>>>>>>> 546b195cacc85e63eadb0da33711761207227066*/
     }
 
 	@Override
