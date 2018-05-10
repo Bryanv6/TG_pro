@@ -22,7 +22,7 @@ public class webdriver {
 		logout();
 	
 	}
-	public static void openApp() {
+	public static WebDriver openApp() {
 		
 		FileInputStream in;
 		try {
@@ -42,6 +42,7 @@ public class webdriver {
 		
 		d.get(url);
 		d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		return d;
 		
 	}
 	
@@ -80,6 +81,7 @@ public class webdriver {
 	
 	public static void goTo_Profiles() {
 		d.get("https://dev.assignforce.revaturelabs.com/profile");
+		//d.findElement(By.xpath("/html/body/div/div[1]/ng-include/div/md-content/md-nav-bar/div/nav/ul/li[6]/a"));
 	}
 	
 	public static void goTo_Reports() {
@@ -88,6 +90,7 @@ public class webdriver {
 	
 	public static void goTo_Settings() {
 		d.get("https://dev.assignforce.revaturelabs.com/settings");
+		
 	}
 	
 	public static void logout()
