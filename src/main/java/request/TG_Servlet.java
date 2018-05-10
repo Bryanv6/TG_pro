@@ -36,6 +36,8 @@ public class TG_Servlet extends HttpServlet {
 		 res.setContentType("application/octet-stream");
 		 res.setHeader("Content-Disposition", "filename=\'JSonFile.json\'");
 		 res.getWriter().append("Test: Result");
+		// JSONArray array = new JSONArray();
+		JSONObject item = new JSONObject();
 		 new TestRunner();
 		File result = new File("/my_git_repos/TG_pro/JsonFile.json");
 		ObjectMapper mapper = new ObjectMapper();

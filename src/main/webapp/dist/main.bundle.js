@@ -157,7 +157,7 @@ var TestService = /** @class */ (function () {
     }
     TestService.prototype.getTestResults = function () {
         return this.http.get(this.apiURL, { params: { "testapp": this.paramURL } })
-            .map(function (response) { return response.text(); });
+            .map(function (response) { return response.json(); });
     };
     TestService.prototype.getData = function (data) {
         this.httpdata = data;
