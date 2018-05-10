@@ -95,7 +95,12 @@
     <version>6.14.3</version>
     <scope>compile</scope>
 </dependency>
-</dependencies>
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>RELEASE</version>
+    </dependency>
+  </dependencies>
 
   <build>
     <finalName>TG_pro</finalName>
