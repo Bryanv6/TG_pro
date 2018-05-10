@@ -48,7 +48,7 @@ public class LoginStepDefinition {
 	public void login_page_should_load() throws Throwable {
 	    // Test if page loads
 		webdriver.d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		//Assert.assertTrue(((JavascriptExecutor)webdriver.d).executeScript("return document.readyState").equals("complete"));
+		Assert.assertTrue(((JavascriptExecutor)webdriver.d).executeScript("return document.readyState").equals("complete"));
 		if(((JavascriptExecutor)webdriver.d).executeScript("return document.readyState").equals("complete"))
 		{
 			result.put("Login page load test", "Success");
@@ -85,8 +85,8 @@ public class LoginStepDefinition {
 		}else { result.put("Home page load test","Failure");}
 		//Assert.assertTrue(webdriver.d.getCurrentUrl().contains("/home"));
 		writeResult();
-		//Assert.assertEquals(webdriver.d.getCurrentUrl(), arg1);
-		//Assert.assertTrue(webdriver.d.getTitle().contains("AssignForce"));
+		Assert.assertEquals(webdriver.d.getCurrentUrl(), arg1);
+		Assert.assertTrue(webdriver.d.getTitle().contains("AssignForce"));
 	}
  /* //((JavascriptExecutor)webdriver.d).executeScript("return document.readyState").equals("complete"));
 	@Given("^I have incorrect \"([^\"]*)\" and \"([^\"]*)\"$")
