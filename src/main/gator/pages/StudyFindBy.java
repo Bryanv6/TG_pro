@@ -19,13 +19,13 @@ public class StudyFindBy {
 		
 		d = webdriver.openApp();
 		webdriver.trainerLogin();	
-//		String x = d.findElement(By.xpath("//*[@id=\"view\"]/div/md-card/md-content/md-table-container/table")).getText();
-//		
-//		
-//		d.findElement(By.xpath("//*[@id=\"view\"]/md-card/md-card[3]/get-train-table-toolbar/md-toolbar/button[2]")).click();
-//		String x =d.findElement(By.xpath("//*[@id=\"incomingTable\"]/md-card[1]/get-train-table-template/div/div/md-table-container/table")).getText();
-//		
-//		System.out.println(x);
+		webdriver.goTo_Reports();
+		
+		ReportsPage reports = new ReportsPage(d); 	
+		reports.button2.click();
+		String x = reports.chart.getText();
+		
+		System.out.println(x);
 
 		
 
