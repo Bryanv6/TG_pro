@@ -9,6 +9,8 @@ import javax.servlet.http.HttpSession;
 
 import org.json.JSONObject;
 
+import webdriver.loginCukes.TestRunner;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -22,12 +24,13 @@ public class TG_Servlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
         //res.getWriter().append("You are in the api");
         
-		JSONObject item = new JSONObject();
+		/*JSONObject item = new JSONObject();
 		item.put("information", "test");
 		item.put("id", 3);
 		item.put("name", "course1");
         
-        res.getWriter().append(String.valueOf(item));
+        res.getWriter().append(String.valueOf(item));*/
+		new TestRunner();
     }
 
 	@Override
