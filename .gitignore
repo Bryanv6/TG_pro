@@ -1,5 +1,6 @@
 *.idea
 
+pom.xml
 *.classpath
 *.class
 *.settings
