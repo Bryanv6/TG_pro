@@ -5,7 +5,8 @@
 *.settings
 *.iml
 *.project
-
+chromedriver.exe
+chromedriver
 # Package Files #
 *.jar
 *.war
