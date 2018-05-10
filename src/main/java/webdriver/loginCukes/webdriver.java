@@ -11,7 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class webdriver {
-	static WebDriver d;
+	public static WebDriver d;
 	static Properties props=new Properties();
 
 	public static void openApp(String url2) {
@@ -37,7 +37,7 @@ public class webdriver {
 		
 	}
 	
-	static void trainerLogin() {
+	public static void trainerLogin() {
 		String username = props.getProperty("username");
 		String password = props.getProperty("password");
 		d.findElement(By.id("username")).sendKeys(username);
@@ -46,7 +46,7 @@ public class webdriver {
 	
 	}
 	
-	static void VPLogin() {
+	public static void VPLogin() {
 		String usernameVP = props.getProperty("usernameVP");
 		String password = props.getProperty("passwordVP");
 		d.findElement(By.id("username")).sendKeys(usernameVP);
@@ -54,7 +54,7 @@ public class webdriver {
 		d.findElement(By.id("Login")).click();
 	}
 	
-	static void logout()
+	public static void logout()
 	{
 		d.findElement(By.xpath("//li[@name='logout']")).click();
 		d.close();

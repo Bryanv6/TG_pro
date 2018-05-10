@@ -35,8 +35,8 @@ public class TG_Servlet extends HttpServlet {
 
 	@Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-		 res.setContentType("application/octet-stream");
-		 res.setHeader("Content-Disposition", "filename=\'JSonFile.json\'");
+		// res.setContentType("application/octet-stream");
+		// res.setHeader("Content-Disposition", "filename=\'JSonFile.json\'");
 		 res.getWriter().append("Test: Result");
 		// JSONArray array = new JSONArray();
 		
@@ -44,7 +44,8 @@ public class TG_Servlet extends HttpServlet {
 		File result = new File("/my_git_repos/TG_pro/JsonFile.json");
 		ObjectMapper mapper = new ObjectMapper();
 		String result2=mapper.readValue(result, String.class);
-		res.getWriter().append(result2);
+		//res.getWriter().append(result2);
+		
 		item.put("test","result");
 		 res.getWriter().append(String.valueOf(item));
 
