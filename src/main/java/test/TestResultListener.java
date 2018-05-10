@@ -9,11 +9,10 @@ import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
 
 public class TestResultListener extends TestListenerAdapter {
-	public static File JsonFile;
+	public static File JsonFile= new File("JsonFile.json");
 	public static FileWriter writer;
 	public static JSONObject finalResult= new JSONObject();
 	public static void init() {
-		JsonFile = new File("JsonFile.json");
 		if(!JsonFile.exists()) 
 		{
 			try {
@@ -33,7 +32,7 @@ public class TestResultListener extends TestListenerAdapter {
 	    	init();
 	    	finalResult.put(result.getName().toString(), result.getStatus());
 	    	try {
-				writer.write(finalResult.toJSONString());
+				writer.append(finalResult.toJSONString());
 				writer.flush();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -46,7 +45,7 @@ public class TestResultListener extends TestListenerAdapter {
 	    public void onTestSuccess(ITestResult result) {
 	    	finalResult.put(result.getName().toString(), result.getStatus());
 	    	try {
-				writer.write(finalResult.toJSONString());
+				writer.append(finalResult.toJSONString());
 				writer.flush();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
