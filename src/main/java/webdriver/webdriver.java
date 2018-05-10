@@ -35,8 +35,9 @@ public class webdriver {
 		}
 		
 		String url = props.getProperty("url");
+		String driver = props.getProperty("driver");
 		
-		File chrome = new File("src/main/resources/chromedriver.exe");
+		File chrome = new File(driver);
 		System.setProperty("webdriver.chrome.driver", chrome.getAbsolutePath());
 		d= new ChromeDriver();
 		
