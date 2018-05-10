@@ -20,18 +20,27 @@ public class TG_Servlet extends HttpServlet {
 
 	@Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-        //res.getWriter().append("You are in the api");
         
+		
+		//The url of the test website is in this parameter - testapp (Pass to webdriver)
+       // System.out.println(req.getParameter("testapp"));
+        
+        
+		//Assuming TestResult
 		JSONObject item = new JSONObject();
-		item.put("information", "test");
-		item.put("id", 3);
-		item.put("name", "course1");
+		item.put("Testname", "Login Test");
+		item.put("TestDescription", "If successful, Login goes to homepage");
+		item.put("TestResult", "false");
+		 
+		
         
+        //Appending result
         res.getWriter().append(String.valueOf(item));
+       //res.getWriter().append(req.getParameter("testapp"));
     }
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-
+		
 	}
 }
