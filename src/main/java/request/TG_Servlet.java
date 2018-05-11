@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.json.JSONObject;
+import org.json.JSONArray;
 import org.json.simple.parser.JSONParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.JsonStreamParser;
@@ -37,7 +38,7 @@ public class TG_Servlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		// res.setContentType("application/octet-stream");
 		// res.setHeader("Content-Disposition", "filename=\'JSonFile.json\'");
-		 res.getWriter().append("Test: Result");
+		 /**res.getWriter().append("Test: Result");
 		// JSONArray array = new JSONArray();
 		
 		 new TestRunner();
@@ -45,9 +46,20 @@ public class TG_Servlet extends HttpServlet {
 		ObjectMapper mapper = new ObjectMapper();
 		String result2=mapper.readValue(result, String.class);
 		//res.getWriter().append(result2);
+		**/
 		
-		item.put("test","result");
-		 res.getWriter().append(String.valueOf(item));
+		JSONObject item = new JSONObject();
+		JSONObject item1 = new JSONObject();
+        JSONArray array = new JSONArray();
+		item.put("Testname", "Login Test");
+		item1.put("Testname", "Logout Test");
+		item.put("TestDescription", "If successful, Login goes to homepage");
+		item1.put("TestDescription", "failure");
+		item.put("TestResult", "false");
+		item1.put("TestResult", "false");
+		array.put(item);
+		array.put(item1);
+		 res.getWriter().append(String.valueOf(array));
 
 
 
@@ -132,7 +144,7 @@ public class TG_Servlet extends HttpServlet {
 		item.put("Testname", "Login Test");
 
 		item.put("TestDescription", "If successful, Login goes to homepage");
-
+		
 		item.put("TestResult", "false");
 
 		 

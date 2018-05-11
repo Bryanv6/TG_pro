@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="11612" started-at="2018-05-10T20:05:55Z" finished-at="2018-05-10T20:06:07Z">
+  <suite name="Default suite" duration-ms="9263" started-at="2018-05-10T20:37:02Z" finished-at="2018-05-10T20:37:12Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="11612" started-at="2018-05-10T20:05:55Z" finished-at="2018-05-10T20:06:07Z">
+    <test name="Default test" duration-ms="9263" started-at="2018-05-10T20:37:02Z" finished-at="2018-05-10T20:37:12Z">
       <class name="test.BatchesTest">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:test.BatchesTest@3c0ecd4b]" name="beforeTest" is-config="true" duration-ms="8470" started-at="2018-05-10T20:05:55Z" finished-at="2018-05-10T20:06:04Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:test.BatchesTest@31ef45e3]" name="beforeTest" is-config="true" duration-ms="4160" started-at="2018-05-10T20:37:02Z" finished-at="2018-05-10T20:37:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="FAIL" signature="verifyBatchesLoad()[pri:0, instance:test.BatchesTest@3c0ecd4b]" name="verifyBatchesLoad" duration-ms="3123" started-at="2018-05-10T20:06:04Z" finished-at="2018-05-10T20:06:07Z">
+        <test-method status="FAIL" signature="verifyBatchesLoad()[pri:0, instance:test.BatchesTest@31ef45e3]" name="verifyBatchesLoad" duration-ms="5079" started-at="2018-05-10T20:37:07Z" finished-at="2018-05-10T20:37:12Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
-at test.TestResultListener.onTestSuccess(TestResultListener.java:49)
+at test.TestResultListener.onTestSuccess(TestResultListener.java:48)
 at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:70)
 at org.testng.internal.Invoker.runTestListeners(Invoker.java:1389)
 at org.testng.internal.Invoker.invokeMethod(Invoker.java:636)
@@ -44,7 +44,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyBatchesLoad -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:test.BatchesTest@3c0ecd4b]" name="afterTest" is-config="true" duration-ms="0" started-at="2018-05-10T20:06:07Z" finished-at="2018-05-10T20:06:07Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:test.BatchesTest@31ef45e3]" name="afterTest" is-config="true" duration-ms="1" started-at="2018-05-10T20:37:12Z" finished-at="2018-05-10T20:37:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
