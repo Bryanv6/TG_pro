@@ -8,10 +8,9 @@
           <include name="afterClass"/>
           <include name="afterTest"/>
           <include name="afterMethod"/>
-          <include name="testFocusSize"/>
           <include name="beforeClass"/>
-          <include name="testCoreSize"/>
           <include name="afterSuite"/>
+          <include name="testSkillsfocus"/>
           <include name="beforeTest"/>
           <include name="beforeMethod"/>
           <include name="beforeSuite"/>

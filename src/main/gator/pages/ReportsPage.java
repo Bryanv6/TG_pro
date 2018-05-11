@@ -37,6 +37,10 @@ public class ReportsPage {
 	@FindBy (xpath = "//*[@id=\"focus\"]/md-list")
 	public WebElement focuslist;
 	
+	@FindBy	(xpath = "//*[@id=\"core\"]/md-list/md-list-item[1]/div[1]/h3" )
+	public WebElement coreelements;
+	
+	//*[@id="core"]/md-list/md-list-item[2]/div[1]/h3
 	
 	@FindBy (id = "focusArrow")
 	public WebElement focustoggle;
