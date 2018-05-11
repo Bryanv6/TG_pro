@@ -1,19 +1,11 @@
 package webdriver;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.io.File;
 import java.util.concurrent.TimeUnit;
-import webdriver.webdriver;
-import webdriver.OverviewPage;
 
 
 public class overviewTest {
@@ -54,6 +46,18 @@ public class overviewTest {
     @Test
     public void test6(){
         OverviewPage.room(d).click();
+    }
+    @Test
+    public void test7(){
+        OverviewPage.startDate(d).click();
+    }
+    @Test
+    public void test8(){
+        OverviewPage.endDate(d).click();
+    }
+    @Test
+    public void test9(){
+        OverviewPage.trainer(d).click();
     }
 
 }
