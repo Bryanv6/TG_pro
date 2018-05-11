@@ -22,11 +22,11 @@ public class TrainersPage {
     }
     //for VP only
     public static WebElement inputLastname(WebDriver wd){
-        return wd.findElement(By.id("input_903"));
+        return wd.findElement(By.id("input_2"));
     }
     //for VP only
     public static WebElement submit(WebDriver wd){
-        return wd.findElement(By.xpath("/html/body/div[4]/md-dialog/form/md-dialog-actions/button[1]"));
+        return wd.findElement(By.xpath("/html/body/div[3]/md-dialog/form/md-dialog-actions/button[1]"));
     }
     //for VP only
     public static WebElement cancel(WebDriver wd){
@@ -51,6 +51,9 @@ public class TrainersPage {
     }
     public static WebElement getInactive(WebDriver wd){
         return wd.findElement(By.xpath("//*[@id=\"view\"]/md-card/md-content[2]"));
+    }
+    public static WebElement getActive(WebDriver wd){
+        return wd.findElement(By.xpath("//*[@id=\"view\"]/md-card/md-content[1]"));
     }
 
 

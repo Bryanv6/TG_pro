@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 
-public class overviewTest {
+public class OverviewTest {
     static WebDriver d;
     @BeforeTest
     public void beforeTest(){
