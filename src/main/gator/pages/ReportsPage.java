@@ -1,4 +1,4 @@
-package com.gator.pages;
+package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
@@ -18,5 +18,26 @@ public class ReportsPage {
 	@FindBy (xpath = "//*[@id=\"incomingTable\"]/md-card[1]/get-train-table-template/div/div/md-table-container/table")
 	public WebElement chart;
 	
+	/**
+	 *  @author kathe my elements init
+	 */
 	
+	@FindBy (id = "coreArrow")
+	public WebElement coretoggle;
+	
+	/*@FindBy (xpath = "//*[@id=\"view\"]/md-card/md-content/md-card[1]/md-toolbar/div/span[1]")
+	public WebElement coreCurriculum;
+	
+	@FindBy (xpath = "//*[@id=\"view\"]/md-card/md-content/md-card[2]/md-toolbar/div/span[1]")
+	public WebElement focuses;*/
+	
+	@FindBy (xpath = "//*[@id=\"core\"]/md-list")
+	public WebElement curriculumlist;
+	
+	@FindBy (xpath = "//*[@id=\"focus\"]/md-list")
+	public WebElement focuslist;
+	
+	
+	@FindBy (id = "focusArrow")
+	public WebElement focustoggle;
 }
