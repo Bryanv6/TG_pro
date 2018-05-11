@@ -27,7 +27,7 @@ module.exports = ".button\r\n{\r\n   font-size: 24px;\r\n   background-color: re
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<div style=\"text-align:center\">\r\n  <h1>\r\n    Welcome to {{ title }}!\r\n  </h1>\r\n  <input type=\"url\" placeholder={{webAppURL}}>\r\n  <button type=\"button\" (click)= \"getResult()\" >Test</button>\r\n\r\n <div>\r\n<!--iterate through json object-->\r\n <li>\r\n <span> <b>{{testResult.TestDescription}}</b> </span>\r\n  <span><b>{{testResult.Testname}}</b></span>\r\n  <span><b>{{testResult.TestResult}}</b></span>\r\n</li>   \r\n<!-- {{testResult}} --> \r\n</div> "
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<div style=\"text-align:center\">\r\n  <h1>\r\n    Welcome to {{ title }}!\r\n  </h1>\r\n  <input type=\"url\" placeholder={{webAppURL}}>\r\n  <button type=\"button\" (click)= \"getResult()\" >Test</button>\r\n\r\n <div>\r\n<!--iterate through json object-->\r\n <li>\r\n <span> <b>{{testResult.TestDescription}}</b> </span>\r\n  <span><b>{{testResult.Testname}}</b></span>\r\n  <span><b>{{testResult.TestResult}}</b></span>\r\n</li>   \r\n {{testResult}} \r\n</div> "
 
 /***/ }),
 
@@ -149,9 +149,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var TestService = /** @class */ (function () {
     function TestService(http) {
         this.http = http;
-        //this.apiURL="http://localhost:8080/TG_pro/ty.do";
+        this.apiURL="http://localhost:8080/TG_pro/ty.do";
         //this.apiURL = 'https://jsonplaceholder.typicode.com/posts';
-        this.apiURL = "http://ec2-18-188-2-93.us-east-2.compute.amazonaws.com:8090/TG_pro/ty.do";
+      //  this.apiURL = "http://ec2-18-188-2-93.us-east-2.compute.amazonaws.com:8090/TG_pro/ty.do";
 
         this.paramURL = "https://dev.assignforce.revaturelabs.com/home";
     }

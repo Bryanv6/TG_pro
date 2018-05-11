@@ -23,6 +23,8 @@ public class BatchesTest {
 		Assert.assertTrue(webdriver.d.getCurrentUrl().contains("batches"));
 	}
 	
+	
+	
 	@BeforeTest
 	public void beforeTest() {
 		 webdriver.openApp("dummy");
