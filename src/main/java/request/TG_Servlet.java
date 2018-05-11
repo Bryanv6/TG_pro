@@ -1,5 +1,8 @@
 package request;
 
+import java.io.File;
+import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,29 +15,57 @@ import javax.servlet.http.HttpSession;
 import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.simple.parser.JSONParser;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.JsonStreamParser;
-import org.json.simple.parser.JSONParser;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.JsonStreamParser;
+
 import webdriver.loginCukes.TestRunner;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.PrintWriter;
-public class TG_Servlet extends HttpServlet {
+ class TG_Servlet extends HttpServlet {
+
 
 	public static JSONObject item = new JSONObject();
+
 	public TG_Servlet() {
 		super();
 	}
 
-	@Override
+
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+
+		
+		 new TestRunner();
+		File result = new File("/my_git_repos/TG_pro/JsonFile.json");
+		ObjectMapper mapper = new ObjectMapper();
+		String result2=mapper.readValue(result, String.class);
+		//res.getWriter().append(result2);
+
+
+		 /*res.setContentType("application/octet-stream");
+		    res.setHeader("Content-Disposition", "filename=\'JSonFile.json\'");
+		new TestRunner();
+		File result = new File("/my_git_repos/TG_pro/JsonFile.json");
+		ObjectMapper mapper = new ObjectMapper();
+		String result2=mapper.readValue(result, String.class);
+		res.getWriter().append(result2);*/
+		 
+		 	
+		item.put("Testname", "Login Test");
+
+		item.put("TestDescription", "If successful, Login goes to homepage");
+
+		item.put("TestResult", "false"); 
+		
+		res.getWriter().append(String.valueOf(item));
+
+	}
+
+		
+	/*	item.put("test","result");
+		 res.getWriter().append(String.valueOf(item));
+
+
+
+       //res.getWriter().append(req.getParameter("testapp"));
+=======
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		
 		JSONObject item = new JSONObject();
@@ -42,6 +73,7 @@ public class TG_Servlet extends HttpServlet {
 		response.getWriter().append(String.valueOf(item));
 		//request.getRequestDispatcher("/TG_pro/test-output/emailable-report.html").forward(request, response);
 		response.sendRedirect("/TG_pro/test-output/emailable-report.html");
+>>>>>>> d9aa5ef646c37c3e528126e5120f9fd5bf24804b
 	}
 		//The url of the test website is in this parameter - testapp (Pass to webdriver)
 
@@ -49,9 +81,12 @@ public class TG_Servlet extends HttpServlet {
 
        // System.out.println(req.getParameter("testapp"));
 
+<<<<<<< HEAD
+*/
+/*=======
 // res.setContentType("application/octet-stream");
 		// res.setHeader("Content-Disposition", "filename=\'JSonFile.json\'");
-		 /**res.getWriter().append("Test: Result");
+		 *//**res.getWriter().append("Test: Result");
 		// JSONArray array = new JSONArray();
 		
 		 new TestRunner();
@@ -59,9 +94,9 @@ public class TG_Servlet extends HttpServlet {
 		ObjectMapper mapper = new ObjectMapper();
 		String result2=mapper.readValue(result, String.class);
 		//res.getWriter().append(result2);
-		**/
+		**//*
 		// java -cp bin;libs/* org.testng.TestNG TestNG/testng.xml
-		/**JSONObject item = new JSONObject();
+		*//**JSONObject item = new JSONObject();
 		JSONObject item1 = new JSONObject();
         JSONArray array = new JSONArray();
 		item.put("Testname", "Login Test");
@@ -73,12 +108,13 @@ public class TG_Servlet extends HttpServlet {
 		array.put(item);
 		array.put(item1);
 		 res.getWriter().append(String.valueOf(array));
-		**/
+		**//*
+>>>>>>> d9aa5ef646c37c3e528126e5120f9fd5bf24804b
 
         
 
 
-
+*/
         
 
 
@@ -141,6 +177,9 @@ public class TG_Servlet extends HttpServlet {
 
 	/*	//Assuming TestResult
 
+<<<<<<< HEAD
+	
+=======
 		JSONObject item = new JSONObject();
 
 		item.put("Testname", "Login Test");
@@ -148,6 +187,7 @@ public class TG_Servlet extends HttpServlet {
 		item.put("TestDescription", "If successful, Login goes to homepage");
 		
 		item.put("TestResult", "false");
+>>>>>>> d9aa5ef646c37c3e528126e5120f9fd5bf24804b
 
 		 
 

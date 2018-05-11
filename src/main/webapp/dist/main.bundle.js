@@ -151,7 +151,7 @@ var TestService = /** @class */ (function () {
         this.http = http;
         this.apiURL="http://localhost:8080/TG_pro/ty.do";
         //this.apiURL = 'https://jsonplaceholder.typicode.com/posts';
-      //  this.apiURL = "http://ec2-18-188-2-93.us-east-2.compute.amazonaws.com:8090/TG_pro/ty.do";
+       // this.apiURL = "http://ec2-18-188-2-93.us-east-2.compute.amazonaws.com:8090/TG_pro/ty.do";
 
         this.paramURL = "https://dev.assignforce.revaturelabs.com/home";
     }
