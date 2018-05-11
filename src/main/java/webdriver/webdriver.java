@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class webdriver {
+	public static ChromeOptions options = new ChromeOptions().addArguments("user-data-dir=C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\User Data");
 	static WebDriver d;
 	static Properties props=new Properties();
 	public static void main(String[] args) {
@@ -39,7 +40,7 @@ public class webdriver {
 		
 		File chrome = new File(driver);
 		System.setProperty("webdriver.chrome.driver", chrome.getAbsolutePath());
-		d= new ChromeDriver();
+		d= new ChromeDriver(options);
 		
 		d.get(url);
 		d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
