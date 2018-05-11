@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import pages.ReportsPage;
+import com.gator.pages.ReportsPage;
 import webdriver.webdriver;
 
 public class Curricula {
