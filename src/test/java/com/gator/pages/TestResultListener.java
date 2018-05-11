@@ -8,50 +8,22 @@ import org.json.simple.JSONObject;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
 
+import com.gator.service.Log;
+
 public class TestResultListener extends TestListenerAdapter {
 	public static File JsonFile= new File("JsonFile.json");
 	public static FileWriter writer;
 	public static JSONObject finalResult= new JSONObject();
-	public static void init() {
-		if(!JsonFile.exists()) 
-		{
-			try {
-			JsonFile.createNewFile();
-			} catch (IOException e) { e.printStackTrace();}
-		} 
-		
-		try {
-			writer = new FileWriter(JsonFile);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-	}
+
 	    @Override
 	    public void onTestFailure(ITestResult result) {
-	    	init();
-	    	finalResult.put(result.getName().toString(), result.getStatus());
-	    	try {
-				writer.append(finalResult.toJSONString());
-				writer.flush();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	    	
+	    	Log.success(result.getName().toString()+": Failure");
+
 	    }
 
 	    @Override
 	    public void onTestSuccess(ITestResult result) {
-	    	finalResult.put(result.getName().toString(), result.getStatus());
-	    	try {
-				writer.append(finalResult.toJSONString());
-				writer.flush();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		
-	        // do what you want to do
+	    	Log.success(result.getName().toString()+": Success");
+	   
 	    }
 }

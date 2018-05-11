@@ -14,9 +14,17 @@ public class BatchesPage {
 	
 	@FindBy (xpath ="//li[@name='batches']")
 	public WebElement batchesButton;
+	@FindBy(xpath="//*[@id=\"view\"]/div/md-card/md-content/md-table-container/table/thead/tr/th[4]/md-icon")
+	public WebElement dateArrow;
 	
 	@FindBy(xpath="//*[@id=\"view\"]/div/md-card/md-content/md-table-container/table/thead/tr/th[1]/md-icon")
 	public WebElement nameArrow;
+	
+	@FindBy (xpath = "//*[@id=\"view\"]/md-card")
+	public WebElement batch_card;
+	
+	@FindBy (xpath = "//*[@id=\"view\"]/md-card/md-content[2]/md-toolbar/div")
+	public WebElement batch_timeline;
 	
 	private static WebElement element;
 	
@@ -24,4 +32,6 @@ public class BatchesPage {
 		element = wd.findElement(By.xpath("//li[@name='batches']"));
 		return element;
 	}
+	
+
 }

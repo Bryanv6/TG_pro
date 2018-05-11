@@ -47,8 +47,8 @@ public class TG_Servlet extends HttpServlet {
 		String result2=mapper.readValue(result, String.class);
 		//res.getWriter().append(result2);
 		**/
-		
-		JSONObject item = new JSONObject();
+		// java -cp bin;libs/* org.testng.TestNG TestNG/testng.xml
+		/**JSONObject item = new JSONObject();
 		JSONObject item1 = new JSONObject();
         JSONArray array = new JSONArray();
 		item.put("Testname", "Login Test");
@@ -60,9 +60,12 @@ public class TG_Servlet extends HttpServlet {
 		array.put(item);
 		array.put(item1);
 		 res.getWriter().append(String.valueOf(array));
-
-
-
+		**/
+		JSONObject item = new JSONObject();
+		item.put("TestResult", "Loading");
+		res.getWriter().append(String.valueOf(item));
+		res.sendRedirect("/TG_pro/test-output/emailable-report.html");
+		
        //res.getWriter().append(req.getParameter("testapp"));
 	}
 		//The url of the test website is in this parameter - testapp (Pass to webdriver)
