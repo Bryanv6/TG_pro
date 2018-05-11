@@ -29,10 +29,10 @@ import webdriver.loginCukes.TestRunner;
 	}
 
 
-    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
 		
-		 new TestRunner();
+		/* new TestRunner();
 		File result = new File("/my_git_repos/TG_pro/JsonFile.json");
 		ObjectMapper mapper = new ObjectMapper();
 		String result2=mapper.readValue(result, String.class);
@@ -46,15 +46,15 @@ import webdriver.loginCukes.TestRunner;
 		ObjectMapper mapper = new ObjectMapper();
 		String result2=mapper.readValue(result, String.class);
 		res.getWriter().append(result2);*/
-		 
+		request.getRequestDispatcher("/TG_pro/src/main/resources/testng.xml").include(request, response);
 		 	
-		item.put("Testname", "Login Test");
+		/*item.put("Testname", "Login Test");
 
 		item.put("TestDescription", "If successful, Login goes to homepage");
 
 		item.put("TestResult", "false"); 
 		
-		res.getWriter().append(String.valueOf(item));
+		res.getWriter().append(String.valueOf(item));*/
 
 	}
 
