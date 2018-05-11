@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
+
 <testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
   <suite name="Default suite" duration-ms="1510" started-at="2018-05-11T19:07:19Z" finished-at="2018-05-11T19:07:21Z">
-=======
+
 <testng-results skipped="16" failed="0" ignored="0" total="16" passed="0">
   <reporter-output>
   </reporter-output>
   <suite name="Suite" duration-ms="7401" started-at="2018-05-11T18:47:01Z" finished-at="2018-05-11T18:47:08Z">
->>>>>>> d9aa5ef646c37c3e528126e5120f9fd5bf24804b
+
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:webdriver.loginCukes.TestRunner@3fd7a715]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-<<<<<<< HEAD
+
     <test name="Default test" duration-ms="1510" started-at="2018-05-11T19:07:19Z" finished-at="2018-05-11T19:07:21Z">
       <class name="CurriculumTestNG">
         <test-method status="PASS" signature="beforeSuite()[pri:0, instance:CurriculumTestNG@54a7079e]" name="beforeSuite" is-config="true" duration-ms="18" started-at="2018-05-11T19:07:19Z" finished-at="2018-05-11T19:07:19Z">
@@ -92,8 +92,7 @@
         </test-method> <!-- afterSuite -->
       </class> <!-- CurriculumTestNG -->
     </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
-=======
+
     <test name="Test" duration-ms="7401" started-at="2018-05-11T18:47:01Z" finished-at="2018-05-11T18:47:08Z">
       <class name="com.gator.pages.BatchesTest">
         <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.gator.pages.BatchesTest@1c3a4799]" name="beforeTest" is-config="true" duration-ms="6765" started-at="2018-05-11T18:47:01Z" finished-at="2018-05-11T18:47:08Z">
@@ -940,5 +939,5 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
       </class> <!-- webdriver.TrainersTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
->>>>>>> d9aa5ef646c37c3e528126e5120f9fd5bf24804b
+
 </testng-results>

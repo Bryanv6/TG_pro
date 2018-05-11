@@ -6,7 +6,7 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-<<<<<<< HEAD
+
       <class name="CurriculumTestNG">
         <methods>
           <include name="afterClass"/>
@@ -15,7 +15,8 @@
           <include name="beforeClass"/>
           <include name="afterSuite"/>
           <include name="testSkillsfocus"/>
-=======
+          </methods>
+</class> <!-- CurriculumTestNG -->
       <class name="webdriver.loginCukes.TestRunner">
         <methods>
           <include name="setUpClass"/>
@@ -53,16 +54,16 @@
           <include name="verifyDateSort"/>
           <include name="afterTest"/>
           <include name="verifyTableLoad"/>
->>>>>>> d9aa5ef646c37c3e528126e5120f9fd5bf24804b
+
           <include name="beforeTest"/>
           <include name="beforeMethod"/>
           <include name="beforeSuite"/>
         </methods>
-<<<<<<< HEAD
-      </class> <!-- CurriculumTestNG -->
-=======
+
+      
+
       </class> <!-- com.gator.pages.BatchesTest -->
->>>>>>> d9aa5ef646c37c3e528126e5120f9fd5bf24804b
+
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
