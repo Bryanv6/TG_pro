@@ -1,7 +1,6 @@
-package test;
-
+package com.gator.pages;
 import org.testng.annotations.Test;
-
+import com.gator.pages.BatchesPage;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 
