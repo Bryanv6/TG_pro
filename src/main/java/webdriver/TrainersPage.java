@@ -40,7 +40,7 @@ public class TrainersPage {
     }
     //for VP only
     public static WebElement deactivateTrainer(WebDriver wd){
-        return wd.findElement(By.xpath("//*[@id=\"view\"]/md-card/md-content[1]/md-list/md-list-item[1]/div[1]/div[1]/button[2]"));
+        return wd.findElement(By.xpath("//*[@id=\"view\"]/md-card/md-content[2]/md-list/md-list-item[1]/button"));
     }
     //for VP only
     public static WebElement reativateTrainer(WebDriver wd){

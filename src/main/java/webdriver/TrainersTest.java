@@ -34,12 +34,11 @@ public class TrainersTest {
     }
     @AfterTest
     public void afterTest(){
-        webdriver.logout();
+       // webdriver.logout();
     }
-    @Test
-    @Ignore
+    @Test(priority = 2)
     public void activateTrainer(){
-
+        //d.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         String name = TrainersPage.getInactive(d).getText();
         String lines[] = name.split("[\r\n]+");
         String deName = lines[0];
@@ -56,8 +55,7 @@ public class TrainersTest {
             }
         }
     }
-    @Test
-    @Ignore
+    @Test(priority = 2)
     public void deactivateTrainer(){
         String name = TrainersPage.getActive(d).getText();
         String lines[] = name.split("[\r\n]+");
@@ -76,14 +74,13 @@ public class TrainersTest {
 
 
     }
-    @Test
+    @Test(priority = 1)
     public void enterTrainerAndSubmit(){
 
         TrainersPage.addTrainer(d).click();
         TrainersPage.inputFirstname(d).sendKeys("Test");
         TrainersPage.inputLastname(d).sendKeys("Name");
         TrainersPage.submit(d).click();
-
         String x = TrainersPage.getInactive(d).getText();
         String lines[] = x.split("[\r\n]+");
         for(String name : lines){
