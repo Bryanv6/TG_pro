@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="com.gator.pages.TestResultListener"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="CurriculumTestNG">
         <methods>
           <include name="afterClass"/>
@@ -11,11 +15,54 @@
           <include name="beforeClass"/>
           <include name="afterSuite"/>
           <include name="testSkillsfocus"/>
+=======
+      <class name="webdriver.loginCukes.TestRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="feature"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- webdriver.loginCukes.TestRunner -->
+      <class name="webdriver.TrainersTest">
+        <methods>
+          <include name="test1"/>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+          <include name="enterTrainerAndSubmit"/>
+        </methods>
+      </class> <!-- webdriver.TrainersTest -->
+      <class name="webdriver.overviewTest">
+        <methods>
+          <include name="test3"/>
+          <include name="test8"/>
+          <include name="test5"/>
+          <include name="test2"/>
+          <include name="test7"/>
+          <include name="test9"/>
+          <include name="overview_test"/>
+          <include name="test6"/>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+          <include name="test4"/>
+        </methods>
+      </class> <!-- webdriver.overviewTest -->
+      <class name="com.gator.pages.BatchesTest">
+        <methods>
+          <include name="verifyTimelineLoad"/>
+          <include name="verifyPageLoad"/>
+          <include name="verifyDateSort"/>
+          <include name="afterTest"/>
+          <include name="verifyTableLoad"/>
+>>>>>>> d9aa5ef646c37c3e528126e5120f9fd5bf24804b
           <include name="beforeTest"/>
           <include name="beforeMethod"/>
           <include name="beforeSuite"/>
         </methods>
+<<<<<<< HEAD
       </class> <!-- CurriculumTestNG -->
+=======
+      </class> <!-- com.gator.pages.BatchesTest -->
+>>>>>>> d9aa5ef646c37c3e528126e5120f9fd5bf24804b
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

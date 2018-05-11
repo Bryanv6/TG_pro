@@ -20,9 +20,13 @@ import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import org.openqa.selenium.chrome.ChromeOptions;
+
 
 
 public class webdriver {
+
+	public static ChromeOptions options = new ChromeOptions().addArguments("user-data-dir=C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\User Data");
 
 	static WebDriver d;
 
@@ -70,13 +74,21 @@ public class webdriver {
 
 		
 
-		File chrome = new File("src/main/resources/chromedriver.exe");
+		String url = props.getProperty("url");
+
+		String driver = props.getProperty("driver");
+
+		
+
+		File chrome = new File(driver);
+
 		System.setProperty("webdriver.chrome.driver", chrome.getAbsolutePath());
 
-		d= new ChromeDriver();
+		d= new ChromeDriver(options);
 
+		
 
-		d.get("https://dev.assignforce.revaturelabs.com");
+		d.get(url);
 
 		d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
@@ -90,13 +102,13 @@ public class webdriver {
 
 	public static void trainerLogin() {
 
-		/*String username = props.getProperty("username");
+		String username = props.getProperty("username");
 
-		String password = props.getProperty("password");*/
+		String password = props.getProperty("password");
 
-		d.findElement(By.id("username")).sendKeys("test.trainer@revature.com.int1");
+		d.findElement(By.id("username")).sendKeys(username);
 
-		d.findElement(By.id("password")).sendKeys("trainer123");
+		d.findElement(By.id("password")).sendKeys(password);
 
 		d.findElement(By.id("Login")).click();
 

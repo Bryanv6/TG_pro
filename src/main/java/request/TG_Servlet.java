@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.json.JSONObject;
+import org.json.JSONArray;
 import org.json.simple.parser.JSONParser;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -27,7 +28,7 @@ import webdriver.loginCukes.TestRunner;
 		super();
 	}
 
-	@Override
+
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 
 		
@@ -64,6 +65,15 @@ import webdriver.loginCukes.TestRunner;
 
 
        //res.getWriter().append(req.getParameter("testapp"));
+=======
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		
+		JSONObject item = new JSONObject();
+		item.put("TestResult", "Loading");
+		response.getWriter().append(String.valueOf(item));
+		//request.getRequestDispatcher("/TG_pro/test-output/emailable-report.html").forward(request, response);
+		response.sendRedirect("/TG_pro/test-output/emailable-report.html");
+>>>>>>> d9aa5ef646c37c3e528126e5120f9fd5bf24804b
 	}
 		//The url of the test website is in this parameter - testapp (Pass to webdriver)
 
@@ -71,12 +81,40 @@ import webdriver.loginCukes.TestRunner;
 
        // System.out.println(req.getParameter("testapp"));
 
+<<<<<<< HEAD
 */
+/*=======
+// res.setContentType("application/octet-stream");
+		// res.setHeader("Content-Disposition", "filename=\'JSonFile.json\'");
+		 *//**res.getWriter().append("Test: Result");
+		// JSONArray array = new JSONArray();
+		
+		 new TestRunner();
+		File result = new File("/my_git_repos/TG_pro/JsonFile.json");
+		ObjectMapper mapper = new ObjectMapper();
+		String result2=mapper.readValue(result, String.class);
+		//res.getWriter().append(result2);
+		**//*
+		// java -cp bin;libs/* org.testng.TestNG TestNG/testng.xml
+		*//**JSONObject item = new JSONObject();
+		JSONObject item1 = new JSONObject();
+        JSONArray array = new JSONArray();
+		item.put("Testname", "Login Test");
+		item1.put("Testname", "Logout Test");
+		item.put("TestDescription", "If successful, Login goes to homepage");
+		item1.put("TestDescription", "failure");
+		item.put("TestResult", "false");
+		item1.put("TestResult", "false");
+		array.put(item);
+		array.put(item1);
+		 res.getWriter().append(String.valueOf(array));
+		**//*
+>>>>>>> d9aa5ef646c37c3e528126e5120f9fd5bf24804b
 
         
 
 
-
+*/
         
 
 
@@ -139,7 +177,17 @@ import webdriver.loginCukes.TestRunner;
 
 	/*	//Assuming TestResult
 
+<<<<<<< HEAD
 	
+=======
+		JSONObject item = new JSONObject();
+
+		item.put("Testname", "Login Test");
+
+		item.put("TestDescription", "If successful, Login goes to homepage");
+		
+		item.put("TestResult", "false");
+>>>>>>> d9aa5ef646c37c3e528126e5120f9fd5bf24804b
 
 		 
 

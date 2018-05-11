@@ -27,7 +27,7 @@ module.exports = ".button\r\n{\r\n   font-size: 24px;\r\n   background-color: re
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<div style=\"text-align:center\">\r\n  <h1>\r\n    Welcome to {{ title }}!\r\n  </h1>\r\n  <input type=\"url\" placeholder={{webAppURL}}>\r\n  <button type=\"button\" (click)= \"getResult()\" >Test</button>\r\n\r\n <div>\r\n<!--iterate through json object-->\r\n <li>\r\n <span> <b>{{testResult.TestDescription}}</b> </span>\r\n  <span><b>{{testResult.Testname}}</b></span>\r\n  <span><b>{{testResult.TestResult}}</b></span>\r\n</li>   \r\n<!-- {{testResult}} --> \r\n</div> "
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<div style=\"text-align:center\">\r\n  <h1>\r\n    Welcome to {{ title }}!\r\n  </h1>\r\n  <input type=\"url\" placeholder={{webAppURL}}>\r\n  <button type=\"button\" (click)= \"getResult()\" >Test</button>\r\n\r\n <div>\r\n<!--iterate through json object-->\r\n <li>\r\n <span> <b>{{testResult.TestDescription}}</b> </span>\r\n  <span><b>{{testResult.Testname}}</b></span>\r\n  <span><b>{{testResult.TestResult}}</b></span>\r\n</li>   \r\n {{testResult}} \r\n</div> "
 
 /***/ }),
 

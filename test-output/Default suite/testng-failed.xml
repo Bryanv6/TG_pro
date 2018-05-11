@@ -3,6 +3,7 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+
       <class name="CurriculumTestNG">
         <methods>
           <include name="afterClass"/>
@@ -11,11 +12,23 @@
           <include name="beforeClass"/>
           <include name="afterSuite"/>
           <include name="testSkillsfocus"/>
+          </methods>
+</class> <!-- CurriculumTestNG -->
+      <class name="com.gator.pages.BatchesTest">
+        <methods>
+          <include name="verifyTimelineLoad"/>
+          <include name="verifyPageLoad"/>
+          <include name="verifyDateSort"/>
+          <include name="afterTest"/>
+          <include name="verifyTableLoad"/>
+
           <include name="beforeTest"/>
           <include name="beforeMethod"/>
           <include name="beforeSuite"/>
         </methods>
-      </class> <!-- CurriculumTestNG -->
+  
+      </class> <!-- com.gator.pages.BatchesTest -->
+
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
