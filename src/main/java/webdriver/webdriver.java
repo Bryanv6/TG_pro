@@ -84,8 +84,8 @@ public class webdriver {
 
 		System.setProperty("webdriver.chrome.driver", chrome.getAbsolutePath());
 
-		d= new ChromeDriver(options);
-
+		//d= new ChromeDriver(options);
+		d= new ChromeDriver();
 		
 
 		d.get(url);

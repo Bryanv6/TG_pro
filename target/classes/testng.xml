@@ -6,9 +6,10 @@
 		<classes>
 			<class name="com.gator.pages.BatchesTest" />
 		    <class name="com.gator.pages.ReportsTest" /> 
-			<class name="webdriver.loginCukes.TestRunner" />
-			<class name="webdriver.TrainersTest" />
-			<class name="webdriver.overviewTest" />
+		    <class name="com.gator.pages.CurriculumTestNG"/>
+			<!-- <class name="webdriver.loginCukes.TestRunner" /> -->
+			<class name="com.gator.pages.TrainersTest" />
+			<class name="com.gator.pages.OverviewTest" />
 		</classes>
 	</test>
 
