@@ -35,8 +35,21 @@ public class TG_Servlet extends HttpServlet {
 	}
 
 	@Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-		// res.setContentType("application/octet-stream");
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		
+		JSONObject item = new JSONObject();
+		item.put("TestResult", "Loading");
+		response.getWriter().append(String.valueOf(item));
+		//request.getRequestDispatcher("/TG_pro/test-output/emailable-report.html").forward(request, response);
+		response.sendRedirect("/TG_pro/test-output/emailable-report.html");
+	}
+		//The url of the test website is in this parameter - testapp (Pass to webdriver)
+
+
+
+       // System.out.println(req.getParameter("testapp"));
+
+// res.setContentType("application/octet-stream");
 		// res.setHeader("Content-Disposition", "filename=\'JSonFile.json\'");
 		 /**res.getWriter().append("Test: Result");
 		// JSONArray array = new JSONArray();
@@ -61,20 +74,6 @@ public class TG_Servlet extends HttpServlet {
 		array.put(item1);
 		 res.getWriter().append(String.valueOf(array));
 		**/
-		JSONObject item = new JSONObject();
-		item.put("TestResult", "Loading");
-		res.getWriter().append(String.valueOf(item));
-		res.sendRedirect("/TG_pro/test-output/emailable-report.html");
-		
-       //res.getWriter().append(req.getParameter("testapp"));
-	}
-		//The url of the test website is in this parameter - testapp (Pass to webdriver)
-
-
-
-       // System.out.println(req.getParameter("testapp"));
-
-
 
         
 
