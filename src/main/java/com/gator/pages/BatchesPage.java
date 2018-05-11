@@ -14,6 +14,7 @@ public class BatchesPage {
 	
 	@FindBy (xpath ="//li[@name='batches']")
 	public WebElement batchesButton;
+	
 	@FindBy(xpath="//*[@id=\"view\"]/div/md-card/md-content/md-table-container/table/thead/tr/th[4]/md-icon")
 	public WebElement dateArrow;
 	
@@ -30,6 +31,20 @@ public class BatchesPage {
 	
 	public static WebElement batchesBtn(WebDriver wd) {
 		element = wd.findElement(By.xpath("//li[@name='batches']"));
+		return element;
+	}
+	
+	public static WebElement tableValue1(WebDriver wd)
+	{
+		element = 
+		wd.findElement(By.xpath("//*[@id=\"view\"]/md-card/md-content[1]/div/md-table-container/table/tbody/tr[1]/td[10]"));
+		return element;
+	}
+	
+	public static WebElement tableValue2(WebDriver wd)
+	{
+		element = 
+		wd.findElement(By.xpath("//*[@id=\"view\"]/md-card/md-content[1]/div/md-table-container/table/tbody/tr[115]/td[10]"));
 		return element;
 	}
 	
