@@ -26,6 +26,11 @@ public class ReportsPage {
 	@FindBy (xpath = "/html/body/div/div[2]/div/md-card/md-card[1]")
 	public WebElement batch_card;
 	
+	
+	
+	/**
+	 *  @Katherine's Curricula Page
+	 */
 	@FindBy (id = "coreArrow")
 	public WebElement coretoggle;
 	

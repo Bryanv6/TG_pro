@@ -1,3 +1,4 @@
+package com.gator.pages;
 import org.testng.annotations.Test;
 
 import pages.ReportsPage;

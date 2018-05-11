@@ -1,6 +1,7 @@
-package model;
+package com.gator.pages;
 
-import java.io.File;
+import java.io.File
+;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -10,7 +11,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import pages.ReportsPage;
 import webdriver.webdriver;
 
 public class Curricula {
