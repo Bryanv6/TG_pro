@@ -10,10 +10,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-<<<<<<< HEAD:src/main/java/model/Curricula.java
-import com.gator.pages.ReportsPage;
-=======
->>>>>>> 4ee03c8fe5744d3736a8fc061347c23e71f4321f:src/main/java/com/gator/pages/Curricula.java
 import webdriver.webdriver;
 
 public class Curricula {
