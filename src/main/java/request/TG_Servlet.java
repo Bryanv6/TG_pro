@@ -1,9 +1,4 @@
-
-
 package request;
-
-
-
 import java.io.File;
 
 import java.io.IOException;
@@ -37,8 +32,7 @@ import org.json.simple.parser.JSONParser;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-
+import com.gator.pages.RequestHelper;
 
 import webdriver.loginCukes.TestRunner;
 
@@ -96,8 +90,9 @@ import webdriver.loginCukes.TestRunner;
 
 		res.getWriter().append(result2);*/
 
-		request.getRequestDispatcher("/TG_pro/src/main/resources/testng.xml").include(request, response);
-
+    	RequestHelper.process();
+		//request.getRequestDispatcher("C:\\my_git_repos\\TG_pro\\test-output\\emailable-report.html").include(request, response);
+		response.sendRedirect("/TG_pro/test-output/emailable-report.html");
 		 	
 
 		/*item.put("Testname", "Login Test");
