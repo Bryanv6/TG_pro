@@ -1,7 +1,7 @@
 package request;
 import java.io.IOException;
-
-
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 
@@ -12,8 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONObject;
+import org.testng.TestListenerAdapter;
+import org.testng.TestNG;
 
 import com.gator.pages.RequestHelper;
+import com.gator.pages.TestResultListener;
 
  class TG_Servlet extends HttpServlet {
 
@@ -69,7 +72,15 @@ import com.gator.pages.RequestHelper;
 
 		res.getWriter().append(result2);*/
 
-    	RequestHelper.process();
+    	//RequestHelper.process();
+    	TestResultListener tlac = new TestResultListener();
+		TestListenerAdapter tla = new TestListenerAdapter(); //set test result listener
+		TestNG runner = new TestNG();
+		
+		List<String> suites = new ArrayList<>();
+		suites.add("C:\\my_git_repos\\TG_pro\\src\\main\\resources\\testng.xml");//path to xml..
+		runner.setTestSuites(suites);
+		runner.run();
     	/*Add request wait if test is taking time
     	 * try {
 			request.wait();
