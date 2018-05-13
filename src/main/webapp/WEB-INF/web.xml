@@ -13,9 +13,9 @@
 
   <servlet-mapping>
     <servlet-name>TG_Servlet</servlet-name>
-    <url-pattern>/TG_pro/ty.do</url-pattern>
+    <url-pattern>*.do</url-pattern>
   </servlet-mapping>
  <welcome-file-list>
-    <welcome-file>dist/index.html</welcome-file>
+    <welcome-file>TG_pro/dist/index.html</welcome-file>
   </welcome-file-list>
 </web-app>
