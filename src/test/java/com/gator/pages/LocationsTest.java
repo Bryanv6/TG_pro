@@ -37,7 +37,8 @@ public class LocationsTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		webdriver.goTo_Locations();		
+		//webdriver.goTo_Locations();
+		d.findElement(By.xpath("/html/body/div/div[1]/ng-include/div/md-content/md-nav-bar/div/nav/ul/li[3]/a")).click();
 		LocationsPage lcpage = new LocationsPage(d);			
 		lcpage.create_location_button.click();		
 		lcpage.name_input.sendKeys("Test"+ randomNumber);		

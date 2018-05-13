@@ -1,4 +1,4 @@
-package request;
+package com.gator.pages;
 
 import java.util.ArrayList;
 import java.util.List;
