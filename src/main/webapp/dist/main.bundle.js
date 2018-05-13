@@ -147,7 +147,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var TestService = /** @class */ (function () {
     function TestService(http) {
         this.http = http;
-        this.apiURL = "/TG_pro/ty.do";
+        this.apiURL = "localhost:8080/TG_pro/ty.do";
         // private apiURL = "http://ec2-18-188-2-93.us-east-2.compute.amazonaws.com:8090/TG_pro/ty.do";
         this.paramURL = "https://dev.assignforce.revaturelabs.com/home";
     }
@@ -155,9 +155,9 @@ var TestService = /** @class */ (function () {
         var _this = this;
         this.http.get(this.apiURL)
             .map(function (response) { return response.json(); }).subscribe(function (data) {
-            _this.getData(data); // console.log(data);
+            _this.getData(data); console.log(data);
             // window.location.replace("/TG_pro/test-output/emailable-report.html");
-            window.location.href = '/TG_pro/test-output/emailable-report.html';
+           // window.location.href = '/TG_pro/test-output/emailable-report.html';
         });
     };
     TestService.prototype.getData = function (data) {

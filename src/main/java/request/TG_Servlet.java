@@ -160,6 +160,10 @@ import request.RequestHelper;
 
 		//request.getRequestDispatcher("C:\\my_git_repos\\TG_pro\\test-output\\emailable-report.html").include(request, response);
 
+    	JSONObject yes = new JSONObject();
+    	yes.put("yes", "you");
+    	
+    	response.getWriter().append(String.valueOf(yes));
 		response.sendRedirect("/TG_pro/test-output/emailable-report.html");
 
 		 	
