@@ -157,7 +157,7 @@ var TestService = /** @class */ (function () {
         /*    .map(function (response) { return response.json(); }).subscribe(function (data) {
             _this.getData(data); // console.log(data);*/
             // window.location.replace("/TG_pro/test-output/emailable-report.html");
-            window.location.href = '/TG_pro/test-output/emailable-report.html';
+            window.location.href = 'test-output/emailable-report.html';
         });
     };
     TestService.prototype.getData = function (data) {
