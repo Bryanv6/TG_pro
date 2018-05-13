@@ -48,10 +48,6 @@ import webdriver.loginCukes.TestRunner;
 
 
 
-	public static JSONObject item = new JSONObject();
-
-
-
 	public TG_Servlet() {
 
 		super();
@@ -63,11 +59,7 @@ import webdriver.loginCukes.TestRunner;
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-
-
-
-		
-
+    	JSONObject item = new JSONObject();
 		/* new TestRunner();
 
 		File result = new File("/my_git_repos/TG_pro/JsonFile.json");
@@ -96,11 +88,11 @@ import webdriver.loginCukes.TestRunner;
 
 		res.getWriter().append(result2);*/
 
-		request.getRequestDispatcher("/TG_pro/src/main/resources/testng.xml").include(request, response);
+		//request.getRequestDispatcher("/TG_pro/src/main/resources/testng.xml").include(request, response);
 
-		 	
+    	//response.sendRedirect("/TG_pro/test-output/emailable-report.html");
 
-		/*item.put("Testname", "Login Test");
+		item.put("Testname", "Login Test");
 
 
 
@@ -112,17 +104,11 @@ import webdriver.loginCukes.TestRunner;
 
 		
 
-		res.getWriter().append(String.valueOf(item));*/
+		response.getWriter().append(String.valueOf(item));
 
 
 
 	}
-
-
-
-
-	@Override
-
 
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
