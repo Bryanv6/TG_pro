@@ -153,9 +153,9 @@ var TestService = /** @class */ (function () {
     }
     TestService.prototype.getTestResults = function () {
         var _this = this;
-        this.http.get(this.apiURL)
-            .map(function (response) { return response.json(); }).subscribe(function (data) {
-            _this.getData(data); // console.log(data);
+        this.http.get(this.apiURL);
+        /*    .map(function (response) { return response.json(); }).subscribe(function (data) {
+            _this.getData(data); // console.log(data);*/
             // window.location.replace("/TG_pro/test-output/emailable-report.html");
             window.location.href = '/TG_pro/test-output/emailable-report.html';
         });
