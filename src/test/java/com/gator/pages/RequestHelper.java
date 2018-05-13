@@ -14,9 +14,9 @@ import org.testng.xml.XmlTest;
 
 public class RequestHelper {
 
-	//public static void process()
-	//{
-	public static void main(String[] args) {
+	public static void process()
+	{
+	//public static void main(String[] args) {
 	/*	TestResultListener tlac = new TestResultListener();
 		TestListenerAdapter tla = new TestListenerAdapter(); //set test result listener
 		TestNG runner = new TestNG();
