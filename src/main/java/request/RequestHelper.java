@@ -29,13 +29,13 @@ public class RequestHelper {
 		XmlTest test=new XmlTest(suite);
 		test.setName("webapp test");
 		List<XmlClass> classes = new ArrayList<XmlClass>();
-		classes.add(new XmlClass("com.gator.pages.BatchesTest"));
-		classes.add(new XmlClass("com.gator.pages.ReportsTest"));
-		classes.add(new XmlClass("com.gator.pages.TrainersTest"));
-		classes.add(new XmlClass("com.gator.pages.OverviewTest"));
-		classes.add(new XmlClass("com.gator.pages.BatchesTest"));
-		classes.add(new XmlClass("com.gator.pages.CurriculumTestNG"));
-		classes.add(new XmlClass("webdriver.loginCukes.TestRunner"));
+		classes.add(new XmlClass("request.BatchesTest"));
+		/*classes.add(new XmlClass("request.ReportsTest"));
+		classes.add(new XmlClass("request.TrainersTest"));
+		classes.add(new XmlClass("request.LocationsTest"));
+		classes.add(new XmlClass("request.OverviewTest"));
+		classes.add(new XmlClass("request.CurriculumTestNG"));
+		classes.add(new XmlClass("webdriver.loginCukes.TestRunner"));*/
 		test.setXmlClasses(classes) ;
 		List<XmlSuite> suites = new ArrayList<XmlSuite>();
 		suites.add(suite);
