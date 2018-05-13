@@ -31,9 +31,7 @@ import org.json.JSONObject;
 import request.RequestHelper;
 
 
-
  class TG_Servlet extends HttpServlet {
-
 
 
 
@@ -241,7 +239,6 @@ import request.RequestHelper;
 
 
 		
-
 
 
 
