@@ -112,8 +112,7 @@ var AppModule = /** @class */ (function () {
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* HttpModule */]
-            ],
-            providers: [__WEBPACK_IMPORTED_MODULE_3__test_service__["a" /* TestService */]],
+            ],            providers: [__WEBPACK_IMPORTED_MODULE_3__test_service__["a" /* TestService */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
@@ -157,13 +156,13 @@ var TestService = /** @class */ (function () {
         /*    .map(function (response) { return response.json(); }).subscribe(function (data) {
             _this.getData(data); // console.log(data);*/
             // window.location.replace("/TG_pro/test-output/emailable-report.html");
-            window.location.href = 'test-output/emailable-report.html';
-        });
+      window.location.href = 'test-output/emailable-report.html';
+        
     };
-    TestService.prototype.getData = function (data) {
+   /* TestService.prototype.getData = function (data) {
         this.httpdata = data;
         return this.httpdata;
-    };
+    };*/
     TestService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* Injectable */])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
