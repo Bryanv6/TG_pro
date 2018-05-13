@@ -14,8 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONObject;
 
 import request.RequestHelper;
-
- class TG_Servlet extends HttpServlet {
+class TG_Servlet extends HttpServlet {
 
 
 

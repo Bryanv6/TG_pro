@@ -17,7 +17,6 @@ public class RequestHelper {
 		TestResultListener tlac = new TestResultListener();
 		TestListenerAdapter tla = new TestListenerAdapter(); //set test result listener
 		TestNG runner = new TestNG();
-		
 		List<String> suites = new ArrayList<>();
 		suites.add("C:\\my_git_repos\\TG_pro\\src\\main\\resources\\testng.xml");//path to xml..
 		runner.setTestSuites(suites);
