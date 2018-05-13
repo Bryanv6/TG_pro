@@ -53,7 +53,7 @@ var AppComponent = /** @class */ (function () {
     function AppComponent(testService) {
         this.testService = testService;
         this.title = 'Test Automation';
-        this.webAppURL = 'https://dev.assignforce.revaturelabs.com/home';
+        this.webAppURL = '';
     }
     AppComponent.prototype.setWebAppURL = function (paramURL) {
         //hardcoded webAppURL for now`1
@@ -148,7 +148,7 @@ var TestService = /** @class */ (function () {
         this.http = http;
         this.apiURL = "/TG_pro/ty.do";
         // private apiURL = "http://ec2-18-188-2-93.us-east-2.compute.amazonaws.com:8090/TG_pro/ty.do";
-        this.paramURL = "https://dev.assignforce.revaturelabs.com/home";
+      //  this.paramURL = "https://dev.assignforce.revaturelabs.com/home";
     }
     TestService.prototype.getTestResults = function () {
         var _this = this;
