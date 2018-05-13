@@ -1,6 +1,4 @@
 package request;
-import java.io.File;
-
 import java.io.IOException;
 
 
@@ -13,28 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 
 import javax.servlet.http.HttpServletResponse;
 
-import javax.servlet.ServletException;
-
-import javax.servlet.http.HttpServlet;
-
-import javax.servlet.http.HttpServletRequest;
-
-import javax.servlet.http.HttpServletResponse;
-
-import javax.servlet.http.HttpSession;
-
 import org.json.JSONObject;
 
-import org.json.JSONArray;
-
-import org.json.simple.parser.JSONParser;
-
-
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gator.pages.RequestHelper;
-
-import webdriver.loginCukes.TestRunner;
 
  class TG_Servlet extends HttpServlet {
 
@@ -91,6 +70,13 @@ import webdriver.loginCukes.TestRunner;
 		res.getWriter().append(result2);*/
 
     	RequestHelper.process();
+    	/*Add request wait if test is taking time
+    	 * try {
+			request.wait();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
 		//request.getRequestDispatcher("C:\\my_git_repos\\TG_pro\\test-output\\emailable-report.html").include(request, response);
 		response.sendRedirect("/TG_pro/test-output/emailable-report.html");
 		 	
