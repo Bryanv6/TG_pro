@@ -64,8 +64,8 @@ var AppComponent = /** @class */ (function () {
         this.testService.getTestResults().subscribe(function (data) {
             _this.testResult = data;
             console.log(_this.testResult);
-            window.open("http://ec2-18-188-2-93.us-east-2.compute.amazonaws.com:8090/TG_pro/test-output/emailable-report.html");
-            
+          //  window.open("http://ec2-18-188-2-93.us-east-2.compute.amazonaws.com:8090/TG_pro/test-output/emailable-report.html");
+            window.open("http://localhost:8080/TG_pro/test-output/emailable-report.html");
         });
     };
     AppComponent = __decorate([
@@ -151,9 +151,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var TestService = /** @class */ (function () {
     function TestService(http) {
         this.http = http;
-         //this.apiURL="http://localhost:8080/TG_pro/ty.do";
+         this.apiURL="http://localhost:8080/TG_pro/ty.do";
         //this.apiURL = 'https://jsonplaceholder.typicode.com/posts';
-        this.apiURL = "http://ec2-18-188-2-93.us-east-2.compute.amazonaws.com:8090/TG_pro/ty.do";
+       // this.apiURL = "http://ec2-18-188-2-93.us-east-2.compute.amazonaws.com:8090/TG_pro/ty.do";
         this.paramURL = "https://dev.assignforce.revaturelabs.com/home";
     }
     TestService.prototype.getTestResults = function () {
