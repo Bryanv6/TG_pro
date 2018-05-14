@@ -107,9 +107,13 @@ var AppComponent = /** @class */ (function () {
         this.testService = testService;
 
         this.title = 'Test Automation';
+<<<<<<< HEAD
 
         this.webAppURL = 'https://dev.assignforce.revaturelabs.com/home';
 
+=======
+        this.webAppURL = '';
+>>>>>>> 9165d764d5007b30498717b1185e11879a1e1cc5
     }
 
     AppComponent.prototype.setWebAppURL = function (paramURL) {
@@ -230,11 +234,15 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
 
                 __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* HttpModule */]
+<<<<<<< HEAD
 
             ],
 
             providers: [__WEBPACK_IMPORTED_MODULE_3__test_service__["a" /* TestService */]],
 
+=======
+            ],            providers: [__WEBPACK_IMPORTED_MODULE_3__test_service__["a" /* TestService */]],
+>>>>>>> 9165d764d5007b30498717b1185e11879a1e1cc5
             bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
 
         })
@@ -300,6 +308,7 @@ var TestService = /** @class */ (function () {
     function TestService(http) {
 
         this.http = http;
+<<<<<<< HEAD
 
         this.apiURL="http://localhost:8080/TG_pro/ty.do";
 
@@ -309,9 +318,15 @@ var TestService = /** @class */ (function () {
 
         this.paramURL = "https://dev.assignforce.revaturelabs.com/home";
 
+=======
+        this.apiURL = "/TG_pro/ty.do";
+        // private apiURL = "http://ec2-18-188-2-93.us-east-2.compute.amazonaws.com:8090/TG_pro/ty.do";
+      //  this.paramURL = "https://dev.assignforce.revaturelabs.com/home";
+>>>>>>> 9165d764d5007b30498717b1185e11879a1e1cc5
     }
 
     TestService.prototype.getTestResults = function () {
+<<<<<<< HEAD
 
         return this.http.get(this.apiURL, { params: { "testapp": this.paramURL } })
 
@@ -322,12 +337,27 @@ var TestService = /** @class */ (function () {
 
     TestService.prototype.getData = function (data) {
 
+=======
+        var _this = this;
+        this.http.get(this.apiURL);
+        /*    .map(function (response) { return response.json(); }).subscribe(function (data) {
+            _this.getData(data); // console.log(data);*/
+            // window.location.replace("/TG_pro/test-output/emailable-report.html");
+      window.location.href = 'test-output/emailable-report.html';
+        
+    };
+   /* TestService.prototype.getData = function (data) {
+>>>>>>> 9165d764d5007b30498717b1185e11879a1e1cc5
         this.httpdata = data;
 
         return this.httpdata;
+<<<<<<< HEAD
 
     };
 
+=======
+    };*/
+>>>>>>> 9165d764d5007b30498717b1185e11879a1e1cc5
     TestService = __decorate([
 
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* Injectable */])(),
@@ -443,5 +473,9 @@ module.exports = __webpack_require__("./src/main.ts");
 
 
 },[0]);
+<<<<<<< HEAD
 
 //# sourceMappingURL=main.bundle.js.map
+=======
+//# sourceMappingURL=main.bundle.js.map
+>>>>>>> 9165d764d5007b30498717b1185e11879a1e1cc5
