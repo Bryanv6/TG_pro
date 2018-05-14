@@ -1,4 +1,4 @@
-package com.gator.pages;
+package com.gator.tests;
 
 import java.io.File;
 import java.io.FileWriter;

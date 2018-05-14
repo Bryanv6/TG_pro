@@ -1,6 +1,8 @@
-package com.gator.pages;
+package com.gator.tests;
 
 import org.testng.annotations.Test;
+
+import com.gator.pages.ReportsPage;
 
 import static org.testng.Assert.assertEquals;
 

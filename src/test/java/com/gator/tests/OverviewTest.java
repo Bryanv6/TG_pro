@@ -1,9 +1,12 @@
-package com.gator.pages;
+package com.gator.tests;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import com.gator.pages.OverviewPage;
+
 import webdriver.webdriver;
 
 import java.util.concurrent.TimeUnit;
