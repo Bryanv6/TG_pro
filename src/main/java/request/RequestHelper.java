@@ -41,11 +41,11 @@ public class RequestHelper {
 		test.setName("webapp test");
 		List<XmlClass> classes = new ArrayList<XmlClass>();
 		classes.add(new XmlClass("request.BatchesTest"));
-	    classes.add(new XmlClass("request.ReportsTest"));
+	    //classes.add(new XmlClass("request.ReportsTest"));
 		classes.add(new XmlClass("request.TrainersTest"));
-		classes.add(new XmlClass("request.LocationsTest"));
+		//classes.add(new XmlClass("request.LocationsTest"));
 		classes.add(new XmlClass("request.OverviewTest"));
-		classes.add(new XmlClass("webdriver.loginCukes.TestRunner"));
+		//classes.add(new XmlClass("webdriver.loginCukes.TestRunner"));
 		//classes.add(new XmlClass("request.CurriculumTestNG")); 
 		test.setXmlClasses(classes) ;
 		List<XmlSuite> suites = new ArrayList<XmlSuite>();
