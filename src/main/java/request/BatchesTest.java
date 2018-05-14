@@ -2,6 +2,7 @@ package request;
 
 import org.testng.annotations.Test;
 
+
 import com.gator.pages.BatchesPage;
 
 import org.testng.annotations.BeforeTest;
@@ -9,8 +10,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 
 
+import webdriver.webdriver;
 
-import webdriver.loginCukes.*;
 
 
 
@@ -92,7 +93,7 @@ public class BatchesTest {
 
 	public void beforeTest() {
 
-		 webdriver.openApp("dummy");
+		 webdriver.openApp();
 
 		 webdriver.trainerLogin();
 

@@ -18,7 +18,7 @@ public class webdriver {
 		
 		FileInputStream in;
 		try {
-			in = new FileInputStream("src/main/resources/db.properties");
+			in = new FileInputStream("TG_pro\\src\\main\\resources\\db.properties");
 			props.load(in);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

@@ -28,7 +28,7 @@ public class webdriver {
 
 	public static ChromeOptions options = new ChromeOptions().addArguments("user-data-dir=C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\User Data");
 
-	static WebDriver d;
+	public static  WebDriver d;
 
 	static Properties props=new Properties();
 
@@ -53,14 +53,14 @@ public class webdriver {
 	public static WebDriver openApp() {
 
 		
-
+/*
 		FileInputStream in;
 
 		try {
 
-			in = new FileInputStream("src/main/resources/db.properties");
+			//in = new FileInputStream("TG_pro/src/main/resources/db.properties");
 
-			props.load(in);
+			//props.load(in);
 
 		} catch (FileNotFoundException e) {
 
@@ -70,17 +70,17 @@ public class webdriver {
 
 			e.printStackTrace();
 
-		}
+		}*/
 
 		
 
-		String url = props.getProperty("url");
+		//String url = props.getProperty("url");
 
-		String driver = props.getProperty("driver");
+		//String driver = props.getProperty("driver");
 
 		
 
-		File chrome = new File(driver);
+		File chrome = new File("src/main/resources/chromedriver.exe");
 
 		System.setProperty("webdriver.chrome.driver", chrome.getAbsolutePath());
 
@@ -88,7 +88,7 @@ public class webdriver {
 		d= new ChromeDriver();
 		
 
-		d.get(url);
+		d.get("https://dev.assignforce.revaturelabs.com/home");
 
 		d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
@@ -102,9 +102,11 @@ public class webdriver {
 
 	public static void trainerLogin() {
 
-		String username = props.getProperty("username");
+		//String username = props.getProperty("username");
 
-		String password = props.getProperty("password");
+		//String password = props.getProperty("password");
+		String username = "test.trainer@revature.com.int1";
+		String password = "trainer123";
 
 		d.findElement(By.id("username")).sendKeys(username);
 

@@ -20,7 +20,8 @@ public class RequestHelper {
 
 	//public static void main(String[] args) {
 	/*	TestResultListener tlac = new TestResultListener();
-		TestListenerAdapter tla = new TestListenerAdapter(); //set test result listener
+		TestListenerAdapter tla = new TestLis
+		tenerAdapter(); //set test result listener
 		TestNG runner = new TestNG();
 		List<String> suites = new ArrayList<>();
 		suites.add("C:\\my_git_repos\\TG_pro\\src\\main\\resources\\testng.xml");//path to xml..
@@ -32,12 +33,12 @@ public class RequestHelper {
 		test.setName("webapp test");
 		List<XmlClass> classes = new ArrayList<XmlClass>();
 		classes.add(new XmlClass("request.BatchesTest"));
-		/*classes.add(new XmlClass("request.ReportsTest"));
+		classes.add(new XmlClass("request.ReportsTest"));
 		classes.add(new XmlClass("request.TrainersTest"));
 		classes.add(new XmlClass("request.LocationsTest"));
 		classes.add(new XmlClass("request.OverviewTest"));
 		classes.add(new XmlClass("request.CurriculumTestNG"));
-		classes.add(new XmlClass("webdriver.loginCukes.TestRunner"));*/
+		classes.add(new XmlClass("webdriver.loginCukes.TestRunner"));
 		test.setXmlClasses(classes) ;
 		List<XmlSuite> suites = new ArrayList<XmlSuite>();
 		suites.add(suite);

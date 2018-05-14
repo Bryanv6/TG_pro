@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 
 
 
+
 import javax.servlet.http.HttpServlet;
 
 import javax.servlet.http.HttpServletRequest;
@@ -49,9 +50,9 @@ public class TG_Servlet extends HttpServlet {
 	
        RequestHelper.process();
 
-       res.sendRedirect("/TG_pro/test-output/emailable-report.html");
+       //res.sendRedirect("/TG_pro/test-output/emailable-report.html");
 
-/*
+
 		JSONObject item = new JSONObject();
 
 		item.put("Testname", "Login Test");
@@ -66,7 +67,7 @@ public class TG_Servlet extends HttpServlet {
 
 
 
-        res.getWriter().append(String.valueOf(item));*/
+        res.getWriter().append(String.valueOf(item));
 
 
     }

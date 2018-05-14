@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" verbose="0" name="Failed suite [Surefire suite]">
+  <test thread-count="1" verbose="0" name="Surefire test(failed)">
+    <classes>
+      <class name="com.gator.tests.LocationsTest">
+        <methods>
+          <include name="addLocation_test"/>
+        </methods>
+      </class> <!-- com.gator.tests.LocationsTest -->
+      <class name="com.gator.tests.ReportsTest">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="graduate_table_Expands"/>
+          <include name="navigate_To_Reports"/>
+          <include name="afterClass"/>
+          <include name="trainee_table_Expands"/>
+          <include name="batch_table_Expands"/>
+          <include name="trainee_table_validInputs"/>
+        </methods>
+      </class> <!-- com.gator.tests.ReportsTest -->
+      <class name="com.gator.tests.OverviewTest">
+        <methods>
+          <include name="afterTest"/>
+          <include name="test3"/>
+          <include name="test2"/>
+          <include name="test5"/>
+          <include name="test4"/>
+          <include name="test7"/>
+          <include name="overview_test"/>
+          <include name="test6"/>
+          <include name="test9"/>
+          <include name="beforeTest"/>
+          <include name="test8"/>
+        </methods>
+      </class> <!-- com.gator.tests.OverviewTest -->
+      <class name="com.gator.tests.BatchesTest">
+        <methods>
+          <include name="verifyDateSort"/>
+          <include name="verifyPageLoad"/>
+          <include name="verifyTableLoad"/>
+          <include name="afterTest"/>
+          <include name="verifyTimelineLoad"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- com.gator.tests.BatchesTest -->
+      <class name="com.gator.tests.TrainersTest">
+        <methods>
+          <include name="activateTrainer"/>
+          <include name="enterTrainerAndSubmit"/>
+          <include name="beforeTest"/>
+          <include name="deactivateTrainer"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- com.gator.tests.TrainersTest -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->
