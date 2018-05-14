@@ -46,7 +46,7 @@ public class RequestHelper {
 		classes.add(new XmlClass("request.LocationsTest"));
 		classes.add(new XmlClass("request.OverviewTest"));
 		classes.add(new XmlClass("webdriver.loginCukes.TestRunner"));
-		classes.add(new XmlClass("request.CurriculumTestNG")); 
+		//classes.add(new XmlClass("request.CurriculumTestNG")); 
 		test.setXmlClasses(classes) ;
 		List<XmlSuite> suites = new ArrayList<XmlSuite>();
 		suites.add(suite);
