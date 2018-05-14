@@ -80,12 +80,12 @@ public class webdriver {
 
 		
 
-		File chrome = new File("C:\\Users\\kathe\\OneDrive\\Documents\\workspace\\TG_pro\\src\\main\\resources\\chromedriver.exe");
+		File chrome = new File("C:\\chromedriver.exe");
 
 		System.setProperty("webdriver.chrome.driver", chrome.getAbsolutePath());
 
-		//d= new ChromeDriver(options);
-		d= new ChromeDriver();
+		d= new ChromeDriver(options);
+		//d= new ChromeDriver();
 		
 
 		d.get("https://dev.assignforce.revaturelabs.com/home");
