@@ -1,13 +1,13 @@
-package com.gator.service;
+/*package com.gator.service;
 
 import org.apache.log4j.Logger;
 
-/**
+*//**
  * The Log class wraps log4j to log all desired test results. 
  * Log file location defined in log4j properties.
  * @author joeyi
  *
- */
+ *//*
 public final class Log {
 	
 	// .class gets an instance of the Log class at run time
@@ -41,4 +41,4 @@ public final class Log {
 		Log.info(msg);
 	}
 
-}
+}*/

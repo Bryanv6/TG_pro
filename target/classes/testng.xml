@@ -4,17 +4,18 @@
 
 	<test name="Test">
 		<classes>
-			<class name="com.gator.pages.BatchesTest" />
-		    <class name="com.gator.pages.ReportsTest" /> 
-		    <class name="com.gator.pages.CurriculumTestNG"/>
-			<!-- <class name="webdriver.loginCukes.TestRunner" /> -->
-			<class name="com.gator.pages.TrainersTest" />
-			<class name="com.gator.pages.OverviewTest" />
+			<class name="request.BatchesTest" />
+		    <class name ="request.LocationsTest"/>
+			 <class name="webdriver.loginCukes.TestRunner" /> 
+			<class name="request.TrainersTest" />
+			<class name="request.OverviewTest" />
+			 <class name="request.ReportsTest" /> 
+			<!--   <class name="request.CurriculumTestNG"/> -->
 		</classes>
 	</test>
-
+<!-- 
 	<listeners>
 	<listener class-name="com.gator.pages.TestResultListener"/>
 	</listeners>
-
+ -->
 </suite>

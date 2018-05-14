@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [testng]">
+  <test thread-count="5" name="webapp test(failed)">
+    <classes>
+      <class name="request.LocationsTest">
+        <methods>
+          <include name="addLocation_test"/>
+        </methods>
+      </class> <!-- request.LocationsTest -->
+      <class name="request.BatchesTest">
+        <methods>
+          <include name="verifyTimelineLoad"/>
+          <include name="verifyTableLoad"/>
+          <include name="verifyPageLoad"/>
+        </methods>
+      </class> <!-- request.BatchesTest -->
+    </classes>
+  </test> <!-- webapp test(failed) -->
+</suite> <!-- Failed suite [testng] -->

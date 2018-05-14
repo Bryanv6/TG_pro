@@ -213,15 +213,7 @@ public class CurriculumTestNG {
   public void afterClass() {
   }
 
-  @BeforeTest
-  public void beforeTest() {
-	   System.out.println("Testing ..." + testname[i]);
-  }
-
-  @AfterTest
-  public void afterTest() {
-	  System.out.println("Testing ..." + testname[i]);
-  }
+ 
 
   @BeforeSuite
   public void beforeSuite() {

@@ -192,43 +192,19 @@ public class CurriculumTestNG {
 	  }
   }*/
   
-  @BeforeMethod
-  public void beforeMethod() {
-	   System.out.println("Testing ..." + testname[i]);  
-	 
-  }
 
-  @AfterMethod
-  public void afterMethod() {
-	  
-	  
-  }
 
-  @BeforeClass
-  public void beforeClass() {
-	// System.out.println("Testing Curriculum"); 
-  }
 
-  @AfterClass
-  public void afterClass() {
-  }
-
-  @BeforeTest
+ /* @BeforeTest
   public void beforeTest() {
 	   System.out.println("Testing ..." + testname[i]);
-  }
+  }*/
 
-  @AfterTest
+ /* @AfterTest
   public void afterTest() {
 	  System.out.println("Testing ..." + testname[i]);
-  }
+  }*/
 
-  @BeforeSuite
-  public void beforeSuite() {
-  }
-
-  @AfterSuite
-  public void afterSuite() {
-  }
+ 
 
 }

@@ -89,27 +89,6 @@ public class BatchesTest {
 
 	
 
-	@BeforeTest
-
-	public void beforeTest() {
-
-		 webdriver.openApp();
-
-		 webdriver.trainerLogin();
-
-		
-
-	}
-
-
-
-	@AfterTest
-
-	public void afterTest() {
-
-		
-
-	}
 
 	
 

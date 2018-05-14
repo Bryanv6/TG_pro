@@ -44,17 +44,14 @@ public class BatchesTest {
 		
 	}
 	
-	@BeforeTest
-	public void beforeTest() {
+	@Test
+	public void beforeyTest() {
 		 webdriver.openApp("dummy");
 		 webdriver.trainerLogin();
 		
 	}
 
-	@AfterTest
-	public void afterTest() {
-		
-	}
+	
 	
 
 

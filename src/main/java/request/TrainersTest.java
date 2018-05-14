@@ -18,19 +18,19 @@ import java.util.concurrent.TimeUnit;
 public class TrainersTest {
     static WebDriver d;
 
-    @BeforeTest
-    public void beforeTest(){
+    @Test(priority =1)
+    public void beforeyTest(){
         d = webdriver.openApp();
         webdriver.VPLogin();
         d.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         TrainersPage.trainersBtn(d).click();
 
     }
-    @AfterTest
+   /* @AfterTest
     public void afterTest(){
        // webdriver.logout();
-    }
-    @Test(priority = 2)
+    }*/
+    @Test(priority = 3)
     public void activateTrainer(){
         //d.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         String name = TrainersPage.getInactive(d).getText();
@@ -49,7 +49,7 @@ public class TrainersTest {
             }
         }
     }
-    @Test(priority = 2)
+    @Test(priority = 3)
     public void deactivateTrainer(){
         String name = TrainersPage.getActive(d).getText();
         String lines[] = name.split("[\r\n]+");
@@ -68,7 +68,7 @@ public class TrainersTest {
 
 
     }
-    @Test(priority = 1)
+    @Test(priority = 2)
     public void enterTrainerAndSubmit(){
 
         TrainersPage.addTrainer(d).click();

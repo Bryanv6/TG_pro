@@ -18,18 +18,18 @@ import java.util.concurrent.TimeUnit;
 public class TrainersTest {
     static WebDriver d;
 
-    @BeforeTest
-    public void beforeTest(){
+    @Test
+    public void beforeyTest(){
         d = webdriver.openApp();
         webdriver.VPLogin();
         d.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         TrainersPage.trainersBtn(d).click();
 
     }
-    @AfterTest
+   /* @AfterTest
     public void afterTest(){
        // webdriver.logout();
-    }
+    }*/
     @Test(priority = 2)
     public void activateTrainer(){
         //d.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

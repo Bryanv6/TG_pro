@@ -14,14 +14,10 @@ import java.util.concurrent.TimeUnit;
 
 public class OverviewTest {
     static WebDriver d;
-    @BeforeTest
-    public void beforeTest(){
+    @Test
+    public void beforeyTest(){
         d = webdriver.openApp();
         webdriver.trainerLogin();
-    }
-    @AfterTest
-    public void afterTest(){
-        webdriver.logout();
     }
 
     @Test

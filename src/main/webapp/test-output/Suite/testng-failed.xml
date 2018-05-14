@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="request.LocationsTest">
+        <methods>
+          <include name="addLocation_test"/>
+        </methods>
+      </class> <!-- request.LocationsTest -->
+      <class name="request.BatchesTest">
+        <methods>
+          <include name="verifyTimelineLoad"/>
+          <include name="verifyTableLoad"/>
+          <include name="verifyPageLoad"/>
+        </methods>
+      </class> <!-- request.BatchesTest -->
+      <class name="webdriver.loginCukes.TestRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="feature"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- webdriver.loginCukes.TestRunner -->
+      <class name="request.ReportsTest">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="navigate_To_Reports"/>
+          <include name="batch_table_Expands"/>
+          <include name="trainee_table_Expands"/>
+          <include name="graduate_table_Expands"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- request.ReportsTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
