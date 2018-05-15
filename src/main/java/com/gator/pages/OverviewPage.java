@@ -17,19 +17,12 @@ public class OverviewPage {
 
     public OverviewPage(){
         try {
-
             in = new FileInputStream("src/main/resources/db.properties");
-
             props.load(in);
-
         } catch (FileNotFoundException e) {
-
             e.printStackTrace();
-
         } catch (IOException e) {
-
             e.printStackTrace();
-
         }
     }
 
