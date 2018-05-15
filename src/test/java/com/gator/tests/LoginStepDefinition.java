@@ -1,20 +1,20 @@
-package webdriver.loginCukes;
+package com.gator.tests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-
+import webdriver.DriverSingleton;
+import org.openqa.selenium.WebDriver;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-
 import org.json.simple.JSONObject;
+import com.gator.pages.LoginPage;;
 
 public class LoginStepDefinition {
 	public static File JsonFile;
@@ -36,20 +36,21 @@ public class LoginStepDefinition {
 		}
 		
 	}
+	static 	WebDriver d=DriverSingleton.getDriver();
 	@Given("^I navigate to \"([^\"]*)\"$")
 	public void i_navigate_to(String arg1) throws Throwable {
-		init();
-		webdriver.openApp(arg1);
+		//init();
 		
+		d.get("https://revature--int1.cs17.my.salesforce.com/");
 	    //arg1 actually not used here, dummy arg
 	}
 
 	@Then("^login page should load$")
 	public void login_page_should_load() throws Throwable {
 	    // Test if page loads
-		webdriver.d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		Assert.assertTrue(((JavascriptExecutor)webdriver.d).executeScript("return document.readyState").equals("complete"));
-		if(((JavascriptExecutor)webdriver.d).executeScript("return document.readyState").equals("complete"))
+		d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Assert.assertTrue(((JavascriptExecutor)d).executeScript("return document.readyState").equals("complete"));
+		if(((JavascriptExecutor)d).executeScript("return document.readyState").equals("complete"))
 		{
 			result.put("Login page load test", "Success");
 		}else {
@@ -60,8 +61,8 @@ public class LoginStepDefinition {
 	@Given("^I have correct \"([^\"]*)\" and \"([^\"]*)\"$")
 	public void i_have_correct_and(String arg1, String arg2) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		LoginPage.user(webdriver.d).sendKeys(arg1);
-		LoginPage.pass(webdriver.d).sendKeys(arg2);
+		LoginPage.user(d).sendKeys(arg1);
+		LoginPage.pass(d).sendKeys(arg2);
 		
 	}
 
@@ -69,7 +70,7 @@ public class LoginStepDefinition {
 	public void i_click_login() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 		//webdriver.trainerLogin();
-		LoginPage.loginButton(webdriver.d).click();
+		LoginPage.loginButton(d).click();
 	}
 
 	@Then("^I should be directed to home page \"([^\"]*)\"$")
@@ -77,16 +78,16 @@ public class LoginStepDefinition {
 	    // Write code here that turns the phrase above into concrete actions
 		//wait 5 seconds to find element
 		//webdriver.d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		((JavascriptExecutor)webdriver.d).executeScript("return document.readyState").equals("complete");
-		new WebDriverWait(webdriver.d,5).until(ExpectedConditions.elementToBeClickable(By.xpath("//li[@name='logout']")));
-		if (webdriver.d.getTitle().contains("AssignForce"))
+		((JavascriptExecutor)d).executeScript("return document.readyState").equals("complete");
+		new WebDriverWait(d,5).until(ExpectedConditions.elementToBeClickable(By.xpath("//li[@name='logout']")));
+		if (d.getTitle().contains("AssignForce"))
 		{
 			result.put("Home page load test","Success");
 		}else { result.put("Home page load test","Failure");}
 		//Assert.assertTrue(webdriver.d.getCurrentUrl().contains("/home"));
 		writeResult();
-		Assert.assertEquals(webdriver.d.getCurrentUrl(), arg1);
-		Assert.assertTrue(webdriver.d.getTitle().contains("AssignForce"));
+		Assert.assertEquals(d.getCurrentUrl(), arg1);
+		Assert.assertTrue(d.getTitle().contains("AssignForce"));
 	}
  /* //((JavascriptExecutor)webdriver.d).executeScript("return document.readyState").equals("complete"));
 	@Given("^I have incorrect \"([^\"]*)\" and \"([^\"]*)\"$")
