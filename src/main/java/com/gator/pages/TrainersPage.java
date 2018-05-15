@@ -72,6 +72,15 @@ public class TrainersPage {
     public static WebElement getActive(WebDriver wd){
         return wd.findElement(By.xpath(props.getProperty("Trainers_page_getActive")));
     }
+    public static WebElement newPTOcancel(WebDriver wd){
+        return wd.findElement(By.xpath(props.getProperty("Trainers_page_newPTO_cancel")));
+    }
+    public static WebElement startDate(WebDriver wd){
+        return wd.findElement(By.xpath(props.getProperty("Trainers_page_startDate")));
+    }
+    public static WebElement endDate(WebDriver wd){
+        return wd.findElement(By.xpath(props.getProperty("Trainers_page_endDate")));
+    }
 
 
 }

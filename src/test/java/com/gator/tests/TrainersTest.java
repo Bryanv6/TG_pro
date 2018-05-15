@@ -106,5 +106,29 @@ public class TrainersTest {
             }
         }
     }
+    //this test requests a new PTO and clicks cancel
+    @Test
+    @Ignore
+    public void newPTOandCancel(){
+        trainers.calenderBtn(d).click();
+
+        trainers.newPTOcancel(d).click();
+    }
+    @Test
+    @Ignore
+    public void clickOnProfile(){
+        trainers.goToProfile(d).click();
+        trainers.trainersBtn(d).click();
+
+    }
+    @Test
+    public void newPTORequest(){
+        trainers.calenderBtn(d).click();
+        trainers.newPTO(d).click();
+        trainers.startDate(d).sendKeys("5/15/2018");
+        trainers.endDate(d).sendKeys("5/20/2018");
+        trainers.submit(d).click();
+
+    }
 
 }
