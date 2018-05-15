@@ -28,7 +28,9 @@ public class webdriver {
 
 	public static ChromeOptions options = new ChromeOptions().addArguments("user-data-dir=C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\User Data");
 
-	public static  WebDriver d;
+	
+
+	public static WebDriver d;
 
 	static Properties props=new Properties();
 
@@ -52,15 +54,14 @@ public class webdriver {
 
 	public static WebDriver openApp() {
 
-		
-/*
+
 		FileInputStream in;
 
 		try {
 
-			//in = new FileInputStream("TG_pro/src/main/resources/db.properties");
+			in = new FileInputStream("src/main/resources/db.properties");
 
-			//props.load(in);
+			props.load(in);
 
 		} catch (FileNotFoundException e) {
 
@@ -70,27 +71,24 @@ public class webdriver {
 
 			e.printStackTrace();
 
-		}*/
+		}
 
 		
 
-		//String url = props.getProperty("url");
+		String url = props.getProperty("url");
 
 		//String driver = props.getProperty("driver");
 
+		File chrome = new File("src/main/resources/chromedriver.exe");
+ 		System.setProperty("webdriver.chrome.driver", chrome.getAbsolutePath());
+
+ 		d = new ChromeDriver();
+		// d = DriverSingleton.getDriver();
 		
 
-		File chrome = new File("C:\\chromedriver.exe");
+		d.get(url);
 
-		System.setProperty("webdriver.chrome.driver", chrome.getAbsolutePath());
-
-		d= new ChromeDriver(options);
-		//d= new ChromeDriver();
-		
-
-		d.get("https://dev.assignforce.revaturelabs.com/home");
-
-		d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		//d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		return d;
 
@@ -103,12 +101,12 @@ public class webdriver {
 	public static void trainerLogin() {
 
 		
-		//String username = props.getProperty("username");
+		String username = props.getProperty("username");
 
-		//String password = props.getProperty("password");
-		String username = "test.trainer@revature.com.int1";
-		String password = "trainer123";
+		String password = props.getProperty("password");
 
+		System.out.println(username+ " " + password);
+		
 		d.findElement(By.id("username")).sendKeys(username);
 
 		d.findElement(By.id("password")).sendKeys(password);

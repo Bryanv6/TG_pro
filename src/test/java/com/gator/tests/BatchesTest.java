@@ -1,11 +1,12 @@
 package com.gator.tests;
 import org.testng.annotations.Test;
 
+
 import com.gator.pages.BatchesPage;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 
-import webdriver.loginCukes.*;
+import webdriver.DriverSingleton;
 
 import org.openqa.selenium.Dimension;
 import org.testng.Assert;
