@@ -4,22 +4,21 @@ import org.testng.annotations.Test;
 import com.gator.pages.BatchesPage;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
-
-import webdriver.loginCukes.*;
-
 import org.openqa.selenium.Dimension;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
-
+import webdriver.DriverSingleton;
+import org.openqa.selenium.WebDriver;
 @Listeners(TestResultListener.class)
 public class BatchesTest {
-	 BatchesPage batches = new BatchesPage(webdriver.d); 
-
+	static 	WebDriver d=DriverSingleton.getDriver();
+	 BatchesPage batches = new BatchesPage(d); 
+	 
 	
 	@Test
 	public void verifyPageLoad() {
-		BatchesPage.batchesBtn(webdriver.d).click();
-		Assert.assertTrue(webdriver.d.getCurrentUrl().contains("batches"));
+		BatchesPage.batchesBtn(d).click();
+		Assert.assertTrue(d.getCurrentUrl().contains("batches"));
 		
 	}
 	
@@ -43,13 +42,7 @@ public class BatchesTest {
 		
 		
 	}
-	
-	@Test
-	public void beforeyTest() {
-		 webdriver.openApp("dummy");
-		 webdriver.trainerLogin();
-		
-	}
+
 
 	
 	
