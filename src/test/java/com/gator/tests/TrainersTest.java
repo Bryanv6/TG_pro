@@ -26,10 +26,6 @@ public class TrainersTest {
         TrainersPage.trainersBtn(d).click();
 
     }
-   /* @AfterTest
-    public void afterTest(){
-       // webdriver.logout();
-    }*/
     @Test(priority = 2)
     public void activateTrainer(){
         //d.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
