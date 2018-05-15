@@ -15,7 +15,7 @@ import java.util.Properties;
 public class TrainersPage {
     FileInputStream in;
     static Properties props = new Properties();
-    TrainersPage(){
+    public TrainersPage(){
         try {
             in = new FileInputStream("src/main/resources/db.properties");
             props.load(in);
