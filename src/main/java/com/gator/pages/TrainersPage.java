@@ -17,19 +17,12 @@ public class TrainersPage {
     static Properties props = new Properties();
     TrainersPage(){
         try {
-
             in = new FileInputStream("src/main/resources/db.properties");
-
             props.load(in);
-
         } catch (FileNotFoundException e) {
-
             e.printStackTrace();
-
         } catch (IOException e) {
-
             e.printStackTrace();
-
         }
     }
 
