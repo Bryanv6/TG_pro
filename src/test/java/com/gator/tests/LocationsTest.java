@@ -3,6 +3,7 @@ package com.gator.tests;
 import org.testng.annotations.Test;
 
 import com.gator.pages.LocationsPage;
+import com.gator.seq.SequenceService;
 import com.google.common.base.Function;
 
 import webdriver.webdriver;
@@ -10,7 +11,6 @@ import webdriver.webdriver;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -28,10 +28,10 @@ public class LocationsTest {
 	@Test (priority = 0)
 	public void addLocation_test() {
 
-		Random rand = new Random();
-
-		int  n = rand.nextInt(100000) + 1;
-		String randomNumber = String.valueOf(n);
+		// Get unique ID from database
+		SequenceService.insert("T");
+		int n = SequenceService.getLast();
+		String uniqueNumber = String.valueOf(n);
 
 		webdriver.VPLogin();
 		
@@ -53,10 +53,10 @@ public class LocationsTest {
 		
 		LocationsPage lcpage = new LocationsPage(d);
 		lcpage.create_location_button(d).click();
-		lcpage.name_input(d).sendKeys("Test"+ randomNumber);
+		lcpage.name_input(d).sendKeys("Test"+ uniqueNumber);
 		lcpage.state_input(d).sendKeys("FL");
 
-		lcpage.city_input(d).sendKeys(randomNumber);
+		lcpage.city_input(d).sendKeys(uniqueNumber);
 		
 		// Explicit Wait for Location Save Button
 		WebDriverWait exWait = new WebDriverWait(d, 1);
@@ -79,7 +79,7 @@ public class LocationsTest {
 		WebElement myThing = null;
 		for(int i=0; i< things.size(); i++)
 		{
-			if(things.get(i).getAttribute("aria-label").contains(randomNumber))
+			if(things.get(i).getAttribute("aria-label").contains(uniqueNumber))
 			{
 				myThing = things.get(i);
 			}
