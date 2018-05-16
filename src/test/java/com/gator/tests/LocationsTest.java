@@ -63,7 +63,7 @@ public class LocationsTest {
 		WebElement lcSaveButton = exWait.until(ExpectedConditions.elementToBeClickable(lcpage.save_button(d)));
 		lcSaveButton.click();
 		
-		// Go to Curricular Tab, then go back to Location tab
+		// Go to Curricula Tab, then go back to Location tab
 		d.findElement(By.xpath("/html/body/div/div[1]/ng-include/div/md-content/md-nav-bar/div/nav/ul/li[4]/a")).click();
 		d.findElement(By.xpath("/html/body/div/div[1]/ng-include/div/md-content/md-nav-bar/div/nav/ul/li[3]/a")).click();
 		

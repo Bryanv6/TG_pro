@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="22093" started-at="2018-05-16T18:34:09Z" finished-at="2018-05-16T18:34:31Z">
+  <suite name="Default suite" duration-ms="23111" started-at="2018-05-16T18:39:42Z" finished-at="2018-05-16T18:40:05Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="22093" started-at="2018-05-16T18:34:09Z" finished-at="2018-05-16T18:34:31Z">
+    <test name="Default test" duration-ms="23111" started-at="2018-05-16T18:39:42Z" finished-at="2018-05-16T18:40:05Z">
       <class name="com.gator.tests.LocationsTest">
-        <test-method status="PASS" signature="addLocation_test()[pri:0, instance:com.gator.tests.LocationsTest@23e84203]" name="addLocation_test" duration-ms="21921" started-at="2018-05-16T18:34:09Z" finished-at="2018-05-16T18:34:31Z">
+        <test-method status="PASS" signature="addLocation_test()[pri:0, instance:com.gator.tests.LocationsTest@23e84203]" name="addLocation_test" duration-ms="23048" started-at="2018-05-16T18:39:42Z" finished-at="2018-05-16T18:40:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addLocation_test -->
