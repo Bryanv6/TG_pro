@@ -6,12 +6,12 @@
       <class name="com.gator.tests.CurriculumTestNG">
         <methods>
           <include name="beforeMethod"/>
-          <include name="beforeClass"/>
           <include name="testSkillscore"/>
+          <include name="testFocusSize"/>
           <include name="afterSuite"/>
           <include name="testSkillsfocus"/>
-          <include name="afterMethod"/>
-          <include name="afterClass"/>
+          <include name="beforeTest"/>
+          <include name="aftertest"/>
           <include name="testCoreSize"/>
           <include name="beforeSuite"/>
         </methods>

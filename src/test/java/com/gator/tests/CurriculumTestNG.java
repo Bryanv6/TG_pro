@@ -15,6 +15,7 @@ import static org.testng.Assert.assertEquals;
 import java.io.IOException;
 
 import java.util.StringTokenizer;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -26,7 +27,7 @@ import org.testng.annotations.AfterSuite;
 
 public class CurriculumTestNG {
 	
-   WebDriver d = webdriver.openApp();
+   WebDriver d;
 	String [] testname = new String[5];{
 	
 	testname[0] = "coresize";
@@ -38,15 +39,21 @@ public class CurriculumTestNG {
 	
 	int j = 0;
 	
+	@BeforeTest
+	public void beforeTest()
+	 {
+	     d = webdriver.openApp();
+	      webdriver.trainerLogin();
+	     d.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+	     d.findElement(By.xpath("//li[@name='curricula']")).click();
+	     
+	  }
+	
 
-	//ReportsPage report = new ReportsPage(d);
-	 @BeforeClass
-	  public void beforeclass(){
-
-	  webdriver.trainerLogin();
-	  d.findElement(By.xpath("//li[@name='curricula']")).click();
-
-	    }
+	 /* webdriver.trainerLogin();
+	 */
+	  
+	    
 	
   @Test (priority = 0)
   public void testCoreSize() throws IOException {
@@ -57,7 +64,7 @@ public class CurriculumTestNG {
 	 for (int i=1; i<=5; i++)
 	  {
 		  System.out.println(i);
-		 // System.out.println(d.findElement(By.xpath("//*[@id=\"core\"]/md-list/md-list-item["+ i +"]/div[1]/h3")).getText());
+		 System.out.println(d.findElement(By.xpath("//*[@id=\"core\"]/md-list/md-list-item["+ i +"]/div[1]/h3")).getText());
 		
 		  count++;
 	  }
@@ -84,8 +91,9 @@ public class CurriculumTestNG {
   {	
 	  int count = 0;
 		 
-		 for (int i=1; i<=7; i++)
+		 for (int i=1; i<=5; i++)
 		  {
+			 System.out.println(i);
 			  System.out.println(d.findElement(By.xpath("//*[@id=\"focus\"]/md-list/md-list-item["+ i +"]/div[1]/h3")).getText());
 			  count++;
 		  }
@@ -110,8 +118,8 @@ public class CurriculumTestNG {
   public void testSkillscore()
   {
 	  int j = 0;
-	  int[]expectedresult = {0, 1, 0, 0, 3, 0, 1};
-	  for(int i  =1; i<=7; i++)
+	  int[]expectedresult = {2, 0, 3, 1, 1};
+	  for(int i  =1; i<=5; i++)
 	  {
 		  int count = 0;
 	  	String token = d.findElement(By.xpath("//*[@id=\"core\"]/md-list/md-list-item["+ i +"]/div[1]/p")).getText(); 
@@ -144,9 +152,9 @@ public class CurriculumTestNG {
   @Test (priority =3)
   public void testSkillsfocus()
   {
-	  int j = 0;
-	  int[]expectedresult = {2, 16, 1, 2};
-	  for(int i  =1; i<=4; i++)
+	  int u = 0;
+	  int[]expectedresult = {1, 16, 0, 1, 2};
+	  for(int i  =1; i<=5; i++)
 	  {
 		  int count = 0;
 	  	String token = d.findElement(By.xpath("//*[@id=\"focus\"]/md-list/md-list-item["+ i +"]/div[1]/p")).getText();
@@ -164,7 +172,7 @@ public class CurriculumTestNG {
 	      		}
 	      	}
 	      	System.out.println(count);
-	          if(count == expectedresult[j])
+	          if(count == expectedresult[u])
 	          {
 	        	  assertEquals(true, true);
 	          }
@@ -172,7 +180,7 @@ public class CurriculumTestNG {
 	          {
 	        	  assertEquals(true, false);
 	          }
-	         j++;
+	         u++;
 	  } 
   }
   
@@ -183,9 +191,11 @@ public class CurriculumTestNG {
   }
   
 
-  @AfterClass
-  public void afterClass() {
-  }
+@AfterTest
+public void aftertest()
+{
+	
+}
 
  
 
@@ -195,6 +205,7 @@ public class CurriculumTestNG {
 
   @AfterSuite
   public void afterSuite() {
+	d.quit();
   }
 
 }

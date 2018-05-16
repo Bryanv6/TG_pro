@@ -82,10 +82,11 @@ public class webdriver {
 		File chrome = new File("src/main/resources/chromedriver.exe");
  		System.setProperty("webdriver.chrome.driver", chrome.getAbsolutePath());
 
- 		d = new ChromeDriver();
+ 		//d = new ChromeDriver();*/
 		// d = DriverSingleton.getDriver();
 		
-
+		ChromeOptions options = new ChromeOptions().addArguments("user-data-dir=C:\\Users\\kathe\\AppData\\Local\\Google\\Chrome\\User Data");
+		d = new ChromeDriver(options);
 		d.get(url);
 
 		//d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -101,15 +102,15 @@ public class webdriver {
 	public static void trainerLogin() {
 
 		
-		String username = props.getProperty("username");
+		String username = props.getProperty("usernameVP");
 
-		String password = props.getProperty("password");
+		String password = props.getProperty("passwordVP");
 
-		System.out.println(username+ " " + password);
+		//System.out.println(username+ " " + password);
 		
-		d.findElement(By.id("username")).sendKeys(username);
+		//d.findElement(By.id("username")).sendKeys(username);
 
-		d.findElement(By.id("password")).sendKeys(password);
+		//d.findElement(By.id("password")).sendKeys(password);
 
 		d.findElement(By.id("Login")).click();
 
