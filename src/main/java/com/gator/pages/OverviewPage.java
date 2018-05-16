@@ -66,7 +66,7 @@ public class OverviewPage {
         return wd.findElement(By.xpath(props.getProperty("Trainers_page_filter")));
     }
     public static WebElement in_progress(WebDriver wd){
-        return wd.findElement(By.xpath("Trainers_page_fitler_inProgress"));
+        return wd.findElement(By.xpath("Trainers_page_filter_inProgress"));
     }
     public static WebElement two_weeks(WebDriver wd){
         return wd.findElement(By.xpath("Trainers_page_filter_twoWeeks"));

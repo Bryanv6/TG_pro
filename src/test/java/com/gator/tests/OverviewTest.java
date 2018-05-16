@@ -18,51 +18,52 @@ public class OverviewTest {
     @BeforeTest
     public void beforeTest(){
         d = webdriver.openApp();
-        webdriver.trainerLogin();
+        webdriver.VPLogin();
     }
-    @AfterTest
-    public void afterTest(){
-        webdriver.logout();
-    }
-
     @Test
     public void overview_test(){
 
         d.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-        String name = OverviewPage.table(d).getText();
+        String name = op.table(d).getText();
         System.out.println(name);
     }
     @Test
-    public void test2(){
+    public void click_names(){
         op.names(d).click();
     }
     @Test
-    public void test3(){
+    public void click_buildings(){
         op.building(d).click();
     }
     @Test
-    public void test4(){
+    public void click_curriculum(){
         op.curriculum(d).click();
     }
     @Test
-    public void test5(){
+    public void click_locations(){
         op.location(d).click();
     }
     @Test
-    public void test6(){
+    public void click_rooms(){
         op.room(d).click();
     }
     @Test
-    public void test7(){
+    public void click_startDate(){
         op.startDate(d).click();
     }
     @Test
-    public void test8(){
+    public void click_endDate(){
         op.endDate(d).click();
     }
     @Test
-    public void test9(){
+    public void click_trainers(){
         op.trainer(d).click();
+    }
+    @Test
+    public void check_filter_inProgress(){
+        op.filter(d).click();
+        op.in_progress(d).click();
+        //*[@id="menu_container_0"]/md-menu-content/md-menu-item[1]/button/span
     }
 
 }
