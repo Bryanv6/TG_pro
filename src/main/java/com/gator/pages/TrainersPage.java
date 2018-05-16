@@ -35,11 +35,11 @@ public class TrainersPage {
     }
     //for VP only
     public static WebElement inputFirstname(WebDriver wd){
-        return wd.findElement(By.id(props.getProperty("Trainers_page_inputFirstname")));
+        return wd.findElement(By.xpath(props.getProperty("Trainers_page_inputFirstname")));
     }
     //for VP only
     public static WebElement inputLastname(WebDriver wd){
-        return wd.findElement(By.id(props.getProperty("Trainers_page_inputLastname")));
+        return wd.findElement(By.xpath(props.getProperty("Trainers_page_inputLastname")));
     }
     //for VP only
     public static WebElement submit(WebDriver wd){

@@ -104,7 +104,33 @@ public class webdriver {
 
 	public static WebDriver openApp() {
 
+		FileInputStream in;
+		try {
 
+			in = new FileInputStream("src/main/resources/db.properties");
+
+			props.load(in);
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		String url = props.getProperty("url");
+		String driver = props.getProperty("driver");
+
+		File chrome = new File(driver);
+
+		System.setProperty("webdriver.chrome.driver", chrome.getAbsolutePath());
+
+		d= new ChromeDriver(options);
+
+		d.get(url);
+
+		d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+		return d;
 
 		
 
@@ -160,7 +186,7 @@ public class webdriver {
 
 		
 
-
+/*
 
 		File chrome = new File("C:\\chromedriver.exe");
 
@@ -189,10 +215,7 @@ public class webdriver {
 		return d;
 
 
-
-		
-
-
+		*/
 
 	}
 
