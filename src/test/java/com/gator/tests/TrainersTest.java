@@ -125,6 +125,7 @@ public class TrainersTest {
     public void newPTORequest(){
         trainers.calenderBtn(d).click();
         trainers.newPTO(d).click();
+        trainers.startDate(d).click();
         trainers.startDate(d).sendKeys("5/15/2018");
         trainers.endDate(d).sendKeys("5/20/2018");
         trainers.submit(d).click();
