@@ -2,51 +2,25 @@ package webdriver;
 
 
 
-
-
-
-
 import java.io.File;
-
-
 
 import java.io.FileInputStream;
 
-
-
 import java.io.FileNotFoundException;
-
-
 
 import java.io.IOException;
 
-
-
 import java.util.Properties;
-
-
 
 import java.util.concurrent.TimeUnit;
 
-
-
 import org.openqa.selenium.By;
-
-
 
 import org.openqa.selenium.WebDriver;
 
-
-
 import org.openqa.selenium.chrome.ChromeDriver;
 
-
-
 import org.openqa.selenium.chrome.ChromeOptions;
-
-
-
-
 
 
 
@@ -56,11 +30,7 @@ public class webdriver {
 
 	public static ChromeOptions options = new ChromeOptions().addArguments("user-data-dir=C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\User Data");
 
-
-
 	public static  WebDriver d;
-
-
 
 	static Properties props=new Properties();
 
@@ -92,23 +62,11 @@ public class webdriver {
 
 		logout();
 
-
-
-	
-
-
-
 	}
 
 
 
 	public static WebDriver openApp() {
-
-
-
-		
-
-/*
 
 		FileInputStream in;
 
@@ -116,37 +74,21 @@ public class webdriver {
 
 		try {
 
-
-
-			//in = new FileInputStream("TG_pro/src/main/resources/db.properties");
+			in = new FileInputStream("src/main/resources/db.properties");
 
 
 
-			//props.load(in);
-
-
+			props.load(in);
 
 		} catch (FileNotFoundException e) {
 
-
-
 			e.printStackTrace();
-
-
 
 		} catch (IOException e) {
 
-
-
 			e.printStackTrace();
 
-
-
-		}*/
-
-
-
-		
+		}
 
 
 
@@ -158,29 +100,17 @@ public class webdriver {
 
 
 
-		
-
-
-
 		File chrome = new File("C:\\chromedriver.exe");
-
-
 
 		System.setProperty("webdriver.chrome.driver", chrome.getAbsolutePath());
 
 
 
-		d= new ChromeDriver(options);
+		//d= new ChromeDriver(options);
 
-		//d= new ChromeDriver();
-
-		
-
-
+		d= new ChromeDriver();
 
 		d.get("https://dev.assignforce.revaturelabs.com/home");
-
-
 
 		d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
@@ -188,25 +118,13 @@ public class webdriver {
 
 		return d;
 
-
-
-		
-
-
-
 	}
-
-
-
-	
 
 
 
 	public static void trainerLogin() {
 
 
-
-		
 
 		//String username = props.getProperty("username");
 
@@ -222,35 +140,17 @@ public class webdriver {
 
 		d.findElement(By.id("username")).sendKeys(username);
 
-
-
 		d.findElement(By.id("password")).sendKeys(password);
 
-
-
 		d.findElement(By.id("Login")).click();
-
-
-
-	
-
-
 
 	}
 
 
 
-	
-
-
-
 	public static void VPLogin() {
 
-
-
 		String usernameVP = props.getProperty("usernameVP");
-
-
 
 		String password = props.getProperty("passwordVP");
 
@@ -258,178 +158,78 @@ public class webdriver {
 
 		d.findElement(By.id("username")).sendKeys(usernameVP);
 
-
-
 		d.findElement(By.id("password")).sendKeys(password);
-
-
 
 		d.findElement(By.id("Login")).click();
 
-
-
 	}
-
-
-
-	
 
 
 
 	public static void goTo_Batches() {
 
-
-
 		d.get("https://dev.assignforce.revaturelabs.com/batches");
 
-
-
 	}
-
-
-
-	
 
 
 
 	public static void goTo_Locations() {
 
-
-
 		d.get("https://dev.assignforce.revaturelabs.com/locations");
 
-
-
 	}
-
-
-
-	
 
 
 
 	public static void goTo_Curricula() {
 
-
-
 		d.get("https://dev.assignforce.revaturelabs.com/curriculum");
 
-
-
 	}
-
-
-
-	
 
 
 
 	public static void goTo_Trainers() {
 
-
-
 		d.get("https://dev.assignforce.revaturelabs.com/trainers");
 
-
-
 	}
-
-
-
-	
 
 
 
 	public static void goTo_Profiles() {
 
-
-
 		d.get("https://dev.assignforce.revaturelabs.com/profile");
-
-
 
 		//d.findElement(By.xpath("/html/body/div/div[1]/ng-include/div/md-content/md-nav-bar/div/nav/ul/li[6]/a"));
 
-
-
 	}
-
-
-
-	
 
 
 
 	public static void goTo_Reports() {
 
-
-
 		d.get("https://dev.assignforce.revaturelabs.com/reports");
 
-
-
 	}
-
-
-
-	
 
 
 
 	public static void goTo_Settings() {
 
-
-
 		d.get("https://dev.assignforce.revaturelabs.com/settings");
 
-
-
-		
-
-
-
-	}
+	}	
 
 
 
-	
-
-
-
-	public static void logout()
-
-
-
-	{
-
-
+	public static void logout() {
 
 		d.findElement(By.xpath("/html/body/div[1]/div[1]/ng-include/div/md-content/md-nav-bar/div/nav/ul/li[9]/button")).click();
 
-
-
 		d.close();
 
-
-
 	}
-
-
-
-	
-
-
-
-	
-
-
-
-	
-
-
-
-
-
-
 
 }
