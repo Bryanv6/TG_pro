@@ -98,11 +98,18 @@ public class TrainersTest {
         d.findElement(By.xpath("//li[@name='batches']")).click();
         trainers.trainersBtn(d).click();
         Thread.sleep(20);
+
         trainers.addTrainer(d).click();
         trainers.inputFirstname(d).sendKeys("Test");
         trainers.inputLastname(d).sendKeys("Name");
         trainers.submit(d).click();
-        String x = trainers.getInactive(d).getText();
+        String x = "";
+        try{
+            x = trainers.getInactive(d).getText();
+        }catch(org.openqa.selenium.StaleElementReferenceException e){
+            x = trainers.getInactive(d).getText();
+        }
+
         String lines[] = x.split("[\r\n]+");
         for(String name : lines){
             if(name.equals("Test Name")) {
@@ -122,7 +129,9 @@ public class TrainersTest {
     }
     @Test
     public void clickOnProfile() throws InterruptedException {
-
+        d.findElement(By.xpath("//li[@name='batches']")).click();
+        trainers.trainersBtn(d).click();
+        Thread.sleep(20);
         trainers.goToProfile(d).click();
         trainers.trainersBtn(d).click();
 
@@ -136,11 +145,13 @@ public class TrainersTest {
         trainers.startDate(d).sendKeys("5/15/2018");
         trainers.endDate(d).sendKeys("5/20/2018");
         trainers.submit(d).click();
-        //*[@id="input_238"]
 
     }
     @Test
-    public void addTrainerWithNoValue(){
+    public void addTrainerWithNoValue() throws InterruptedException {
+        d.findElement(By.xpath("//li[@name='batches']")).click();
+        trainers.trainersBtn(d).click();
+        Thread.sleep(20);
         trainers.addTrainer(d).click();
         trainers.inputFirstname(d).sendKeys(" ");
         trainers.inputLastname(d).sendKeys(" ");
@@ -148,7 +159,11 @@ public class TrainersTest {
         trainers.cancel(d).click();
     }
     @Test
-    public void addTrainerWithNumbers(){
+    public void addTrainerWithNumbers() throws InterruptedException {
+        d.findElement(By.xpath("//li[@name='batches']")).click();
+        trainers.trainersBtn(d).click();
+        Thread.sleep(20);
+
         trainers.addTrainer(d).click();
         trainers.inputFirstname(d).sendKeys("12345");
         trainers.inputLastname(d).sendKeys("12345");
@@ -156,19 +171,31 @@ public class TrainersTest {
         Assert.assertEquals(true,false);
     }
     @Test
-    public void addTrainerWithJustFirstName(){
+    public void addTrainerWithJustFirstName() throws InterruptedException {
+        d.findElement(By.xpath("//li[@name='batches']")).click();
+        trainers.trainersBtn(d).click();
+        Thread.sleep(20);
+
         trainers.addTrainer(d).click();
         trainers.inputFirstname(d).sendKeys("test");
         trainers.submit(d).click();
         trainers.cancel(d).click();
     }
     @Test
-    public void addTrainerWithJustLastName(){
+    public void addTrainerWithJustLastName() throws InterruptedException {
+        d.findElement(By.xpath("//li[@name='batches']")).click();
+        trainers.trainersBtn(d).click();
+        Thread.sleep(20);
+
         trainers.addTrainer(d).click();
         trainers.inputLastname(d).sendKeys("test123");
         trainers.submit(d).click();
         trainers.cancel(d).click();
     }
-
-
+    @Test(priority = 100)
+    public void checkAddTrainerBtn(){
+        d.navigate().refresh();
+        trainers.addTrainer(d).click();
+        trainers.cancel(d).click();
+    }
 }
