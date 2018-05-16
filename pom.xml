@@ -109,6 +109,13 @@
       <artifactId>testng</artifactId>
       <version>RELEASE</version>
     </dependency>
+    
+    <!--  Added by Aaron for connecting to sequence generator -->
+    <dependency>
+		    <groupId>com.oracle</groupId>
+    		<artifactId>ojdbc7</artifactId>
+		    <version>12.1.0</version>
+		</dependency>
   </dependencies>
 
   <build>
