@@ -53,14 +53,14 @@ public class webdriver {
 	public static WebDriver openApp() {
 
 		
-/*
+
 		FileInputStream in;
 
 		try {
 
-			//in = new FileInputStream("TG_pro/src/main/resources/db.properties");
+			in = new FileInputStream("src/main/resources/db.properties");
 
-			//props.load(in);
+			props.load(in);
 
 		} catch (FileNotFoundException e) {
 
@@ -70,7 +70,7 @@ public class webdriver {
 
 			e.printStackTrace();
 
-		}*/
+		}
 
 		
 
@@ -84,8 +84,8 @@ public class webdriver {
 
 		System.setProperty("webdriver.chrome.driver", chrome.getAbsolutePath());
 
-		d= new ChromeDriver(options);
-		//d= new ChromeDriver();
+		//d= new ChromeDriver(options);
+		d= new ChromeDriver();
 		
 
 		d.get("https://dev.assignforce.revaturelabs.com/home");
