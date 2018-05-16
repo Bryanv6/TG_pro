@@ -205,7 +205,7 @@ public void aftertest()
 
   @AfterSuite
   public void afterSuite() {
-	d.quit();
+	d.close();
   }
 
 }
