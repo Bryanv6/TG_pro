@@ -1,7 +1,5 @@
 package webdriver;
 
-
-
 import java.io.File;
 
 import java.io.FileInputStream;
@@ -185,20 +183,13 @@ public class webdriver {
 
 	}
 
-	
-
 	public static void goTo_Settings() {
 
 		d.get("https://dev.assignforce.revaturelabs.com/settings");
 
-		
-
-	}
-
-	
+	}	
 
 	public static void logout()
-
 	{
 
 		d.findElement(By.xpath("/html/body/div[1]/div[1]/ng-include/div/md-content/md-nav-bar/div/nav/ul/li[9]/button")).click();
@@ -206,13 +197,4 @@ public class webdriver {
 		d.close();
 
 	}
-
-	
-
-	
-
-	
-
-
-
 }
