@@ -17,15 +17,16 @@ public class CurriculumToggleCucumber {
 	WebDriver d;
 	public CurriculumToggleCucumber()
 	{
-		/*d = webdriver.openApp();
+		d = webdriver.openApp();
 		webdriver.trainerLogin();
 	    d.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-	    d.findElement(By.xpath("//li[@name='curricula']")).click();*/
+	    d.findElement(By.xpath("//li[@name='curricula']")).click();
 	}
 	
 	@Given("^I \"([^\"]*)\" on the core toggle$")
 	public void i_on_the_core_toggle(String arg1) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
+		
 	    throw new PendingException();
 	}
 
