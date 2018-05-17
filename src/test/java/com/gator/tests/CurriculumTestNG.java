@@ -1,39 +1,35 @@
 package com.gator.tests;
 import org.testng.annotations.Test;
-
-
-import com.gator.pages.ReportsPage;
-
-//import model.Curricula;
 import webdriver.webdriver;
-
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeClass;
-
 import static org.testng.Assert.assertEquals;
-
 import java.io.IOException;
-
 import java.util.StringTokenizer;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
+import org.testng.ITestResult;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 
+@Listeners({CurriculumTestListener.class})
 public class CurriculumTestNG {
 	
    WebDriver d;
-	String [] testname = new String[5];{
+   WebDriverWait wait;
+   public static String result;
+   String [] testname = new String[5];{
 	
 	testname[0] = "coresize";
 	testname[1] = "focussize";
 	testname[2] = "skillscore";
-	testname[3] = " ";
+	testname[3] = "skillsfocus ";
 	testname[4] = " ";
 	}
 	
@@ -43,8 +39,9 @@ public class CurriculumTestNG {
 	public void beforeTest()
 	 {
 	     d = webdriver.openApp();
+	      wait= new WebDriverWait(d, 10);
 	      webdriver.trainerLogin();
-	     d.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+	     wait.until(elementToBeClickable(By.xpath("//li[@name='curricula']")));
 	     d.findElement(By.xpath("//li[@name='curricula']")).click();
 	     
 	  }
@@ -54,15 +51,55 @@ public class CurriculumTestNG {
 	 */
 	  
 	    
-	
+	//if it is a standard amount it hasn't grown 
+ 
   @Test (priority = 0)
+  public void testexpansioncore()
+  {
+	  Dimension coresize = new Dimension(953, 376);
+	  
+	  wait.until(elementToBeClickable(By.xpath("//*[@id=\"core\"]/md-list")));
+	  if(coresize.equals(d.findElement(By.xpath("//*[@id=\"core\"]/md-list")).getSize()))
+	  {
+		  assertEquals(true,true);
+	  }
+	  else
+	  {
+		  assertEquals(false,true);
+	  }
+	
+  }
+  @Test (priority = 3)
+  public void testexpansionfocus()
+  {
+	  Dimension focussize = new Dimension(953, 376);
+	  wait.until(elementToBeClickable(By.xpath("//*[@id=\"focus\"]/md-list")));
+	  if(focussize.equals(d.findElement(By.xpath("//*[@id=\"focus\"]/md-list")).getSize()))
+	  {
+		  assertEquals(true,true);
+	  }
+	  else
+	  {
+		  assertEquals(false,true);
+	  }
+	  
+  }
+  
+  @Test (priority = 1)
   public void testCoreSize() throws IOException {
 	 //ReportsPage report = new ReportsPage(d);
 	  
+	 if(result.equals("Failed"))
+	 {
+		assertEquals(true, true); 
+	 }
+	 else
+	 {
 	 int count = 0;
-	 
+	
 	 for (int i=1; i<=5; i++)
 	  {
+		 wait.until(elementToBeClickable(By.xpath("//*[@id=\"core\"]/md-list/md-list-item["+ i +"]/div[1]/h3")));
 		  System.out.println(i);
 		 System.out.println(d.findElement(By.xpath("//*[@id=\"core\"]/md-list/md-list-item["+ i +"]/div[1]/h3")).getText());
 		
@@ -83,17 +120,25 @@ public class CurriculumTestNG {
 		  assertEquals(true, false);
 		 
 	  }
+	 }
 	
   }
   
-  @Test (priority =1)
+  @Test (priority =4)
   public void testFocusSize() throws IOException
   {	
+	  if(result.equals("Failed"))
+		 {
+			assertEquals(true, true); 
+		 }
+		 else
+		 {
 	  int count = 0;
 		 
 		 for (int i=1; i<=5; i++)
 		  {
 			 System.out.println(i);
+			 wait.until(elementToBeClickable(By.xpath("//*[@id=\"focus\"]/md-list/md-list-item["+ i +"]/div[1]/h3")));
 			  System.out.println(d.findElement(By.xpath("//*[@id=\"focus\"]/md-list/md-list-item["+ i +"]/div[1]/h3")).getText());
 			  count++;
 		  }
@@ -113,15 +158,17 @@ public class CurriculumTestNG {
 		 
 	  }
   }
+  }
   
   @Test (priority =2)
   public void testSkillscore()
   {
-	  int j = 0;
+	  int o = 0;
 	  int[]expectedresult = {2, 0, 3, 1, 1};
 	  for(int i  =1; i<=5; i++)
 	  {
 		  int count = 0;
+		  wait.until(elementToBeClickable(By.xpath("//*[@id=\"core\"]/md-list/md-list-item["+ i +"]/div[1]/p"))); 
 	  	String token = d.findElement(By.xpath("//*[@id=\"core\"]/md-list/md-list-item["+ i +"]/div[1]/p")).getText(); 
 	    StringTokenizer multiTokenizer = new StringTokenizer(token, ":");
 	      String skills =multiTokenizer.nextToken();
@@ -137,19 +184,21 @@ public class CurriculumTestNG {
 	      		}
 	      	}
 	      	System.out.println(count);
-	          if(count == expectedresult[j])
+	          if(count == expectedresult[o])
 	          {
-	        	  assertEquals(true, true);
+	        	  j++;
+	        	  assertEquals(true, true);	        	  
 	          }
 	          else
 	          {
-	        	  assertEquals(true, false);
+	        	  j++;
+	        	  assertEquals(true, false);	  
 	          }
-	         j++;
+	         o++;
 	  }
   }
   
-  @Test (priority =3)
+  @Test (priority =5)
   public void testSkillsfocus()
   {
 	  int u = 0;
@@ -157,6 +206,7 @@ public class CurriculumTestNG {
 	  for(int i  =1; i<=5; i++)
 	  {
 		  int count = 0;
+		  wait.until(elementToBeClickable(By.xpath("//*[@id=\"focus\"]/md-list/md-list-item["+ i +"]/div[1]/p")));
 	  	String token = d.findElement(By.xpath("//*[@id=\"focus\"]/md-list/md-list-item["+ i +"]/div[1]/p")).getText();
 	    StringTokenizer multiTokenizer = new StringTokenizer(token, ":");
 	      String skills =multiTokenizer.nextToken();
@@ -175,6 +225,7 @@ public class CurriculumTestNG {
 	          if(count == expectedresult[u])
 	          {
 	        	  assertEquals(true, true);
+	        	  
 	          }
 	          else
 	          {
@@ -190,11 +241,16 @@ public class CurriculumTestNG {
 	 
   }
   
+  @AfterMethod
+  public void aftermethod()
+  {
+	  System.out.println(result);
+  }
 
 @AfterTest
 public void aftertest()
 {
-	
+	System.out.println(result);
 }
 
  
