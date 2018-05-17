@@ -1,4 +1,6 @@
 package com.gator.tests;
+import static org.testng.Assert.assertEquals;
+
 import java.util.concurrent.TimeUnit;
 
 
@@ -14,41 +16,51 @@ import webdriver.webdriver;
 
 public class CurriculumToggleCucumber {
 	
-	WebDriver d;
+	 WebDriver d;
+	
 	public CurriculumToggleCucumber()
 	{
 		d = webdriver.openApp();
 		webdriver.trainerLogin();
-	    d.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-	    d.findElement(By.xpath("//li[@name='curricula']")).click();
+	    d.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+	   d.findElement(By.xpath("//li[@name='curricula']")).click();
 	}
 	
 	@Given("^I \"([^\"]*)\" on the core toggle$")
 	public void i_on_the_core_toggle(String arg1) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
+		 d.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		d.findElement(By.xpath("//*[@id=\"coreArrow\"]")).click(); 
 		
-	    throw new PendingException();
+		String n = d.findElement(By.xpath("//*[@id=\"coreArrow\"]")).getText();
+		if(n.equals("keyboard_arrow_down"))
+		{
+			assertEquals(true,true);
+		}
+		else
+		{
+			assertEquals(false, true);
+		}
+	   // throw new PendingException();
 	}
 
 	@Then("^a list of core \"([^\"]*)\" should not be displayed$")
 	public void a_list_of_core_should_not_be_displayed(String arg1) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
-	}
-
-	@Given("^I \"([^\"]*)\" on the focus toggle$")
-	public void i_on_the_focus_toggle(String arg1) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
-	}
-
-	@Then("^a list of focus\"([^\"]*)\" should not be displayed$")
-	public void a_list_of_focus_should_not_be_displayed(String arg1) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
-	}
-
-
-
+		d.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		String display = d.findElement(By.xpath("//*[@id=\"core\"]")).getCssValue("display");
+		//System.out.println(display);
+		if(display.equals("block"))
+		{
+			assertEquals(true, true);
+		}
+		else
+		{
+			assertEquals(false, true);
+		}
+	    //throw new PendingException();
+	    
+		d.close();
+	    }
 
 }

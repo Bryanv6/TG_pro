@@ -3,19 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.gator.tests.CurriculumTestNG">
+      <class name="com.gator.tests.Curric_TestRunner">
         <methods>
-          <include name="beforeMethod"/>
-          <include name="testSkillscore"/>
-          <include name="testFocusSize"/>
-          <include name="afterSuite"/>
-          <include name="testSkillsfocus"/>
-          <include name="beforeTest"/>
-          <include name="aftertest"/>
-          <include name="testCoreSize"/>
-          <include name="beforeSuite"/>
+          <include name="setUpClass"/>
+          <include name="feature" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
         </methods>
-      </class> <!-- com.gator.tests.CurriculumTestNG -->
+      </class> <!-- com.gator.tests.Curric_TestRunner -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -7,7 +7,6 @@
 *.project
 chromedriver.exe
 chromedriver
-*.properties
 # Package Files #
 *.jar
 *.war
