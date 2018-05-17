@@ -56,17 +56,13 @@ public class BatchesTest {
 	@Test(priority = 2)
 
 	public void verifyTableLoad() {
-
 		isElementPresent = batches.batch_card.isDisplayed();
-
 		Assert.assertTrue(isElementPresent);
-
 	}
 
 	// @Ignore
 
 	@Test(priority = 2)
-
 	public void verifyTimelineLoad() {
 
 		isElementPresent = batches.batch_timeline.isDisplayed();
