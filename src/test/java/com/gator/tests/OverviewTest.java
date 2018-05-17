@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 public class OverviewTest {
     static WebDriver d;
+    OverviewPage op = new OverviewPage();
     @BeforeTest
     public void beforeTest(){
         d = webdriver.openApp();
@@ -33,35 +34,35 @@ public class OverviewTest {
     }
     @Test
     public void test2(){
-        OverviewPage.names(d).click();
+        op.names(d).click();
     }
     @Test
     public void test3(){
-        OverviewPage.building(d).click();
+        op.building(d).click();
     }
     @Test
     public void test4(){
-        OverviewPage.curriculum(d).click();
+        op.curriculum(d).click();
     }
     @Test
     public void test5(){
-        OverviewPage.location(d).click();
+        op.location(d).click();
     }
     @Test
     public void test6(){
-        OverviewPage.room(d).click();
+        op.room(d).click();
     }
     @Test
     public void test7(){
-        OverviewPage.startDate(d).click();
+        op.startDate(d).click();
     }
     @Test
     public void test8(){
-        OverviewPage.endDate(d).click();
+        op.endDate(d).click();
     }
     @Test
     public void test9(){
-        OverviewPage.trainer(d).click();
+        op.trainer(d).click();
     }
 
 }

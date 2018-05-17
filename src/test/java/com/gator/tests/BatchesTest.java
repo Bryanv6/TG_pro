@@ -1,4 +1,5 @@
 package com.gator.tests;
+
 import org.testng.annotations.Test;
 import com.gator.pages.BatchesPage;
 import org.testng.annotations.Listeners;
@@ -13,8 +14,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import webdriver.webdriver;
 
+
 @Listeners(TestResultListener.class)
+
 public class BatchesTest {
+
 	static 	WebDriver d=webdriver.openApp();
 	 BatchesPage batches = new BatchesPage(d); 
 	 Boolean isElementPresent;
@@ -30,8 +34,11 @@ public class BatchesTest {
 		//BatchesPage.batchesBtn(d).click();
 		element.click();
 		Assert.assertTrue(d.getCurrentUrl().contains("batches"));
+
 	}
+
 	
+
 //	@Ignore
 	@Test(priority=2)
 	public void verifyTableLoad() {
@@ -152,6 +159,7 @@ public class BatchesTest {
 		//date2 is last row
 		
 	}
+
 	
 	@Test(priority=3)
 	public void verifyStartDateArrowSort() {
@@ -182,7 +190,9 @@ public class BatchesTest {
 		}
 		//date2 is last row
 		
+
 	}
+
 	
 	@Test(priority=3)
 	public void verifyEndDateSort() {
@@ -241,8 +251,11 @@ public class BatchesTest {
 		} catch (ParseException e) {	e.printStackTrace();}
 		}
 		//date2 is last row
+
 		
+
 	}
+
 
 	//@Ignore
 	@Test(priority=10)
@@ -250,8 +263,13 @@ public class BatchesTest {
 		webdriver.logout();
 		
 	}
+
 	
+
 	
+
+
+
 
 
 }

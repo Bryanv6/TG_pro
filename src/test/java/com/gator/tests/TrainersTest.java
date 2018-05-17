@@ -1,6 +1,13 @@
 package com.gator.tests;
+
+import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Ignore;
+
 import org.testng.annotations.Test;
 import com.gator.pages.TrainersPage;
 import webdriver.webdriver;
@@ -11,25 +18,37 @@ import java.util.concurrent.TimeUnit;
  */
 public class TrainersTest {
     static WebDriver d;
+    TrainersPage trainers = new TrainersPage();
 
-    @Test
-    public void beforeyTest(){
+    @BeforeTest
+    public void beforeTest(){
         d = webdriver.openApp();
         webdriver.VPLogin();
         d.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        TrainersPage.trainersBtn(d).click();
+        //WebDriverWait wait = new WebDriverWait(d, 20);
+
+        trainers.trainersBtn(d).click();
 
     }
     @Test(priority = 2)
+    @Ignore
     public void activateTrainer(){
-        //d.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        String name = TrainersPage.getInactive(d).getText();
+        //WebDriverWait wait = new WebDriverWait(d, 20);
+        String name = "";
+        try {
+            name = trainers.getInactive(d).getText();
+        }
+        catch (StaleElementReferenceException e){
+            System.out.println("Caught exeption and waited");
+            d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            name = trainers.getInactive(d).getText();
+        }
         String lines[] = name.split("[\r\n]+");
         String deName = lines[0];
 
-        TrainersPage.reativateTrainer(d).click();
+        trainers.reativateTrainer(d).click();
 
-        name = TrainersPage.getActive(d).getText();
+        name = trainers.getActive(d).getText();
         String lines1[] = name.split("[\r\n]+");
         for(String n : lines1){
             if(n.equals(deName)) {
@@ -40,13 +59,23 @@ public class TrainersTest {
         }
     }
     @Test(priority = 2)
+    @Ignore
     public void deactivateTrainer(){
-        String name = TrainersPage.getActive(d).getText();
+        String name = "";
+        try {
+            name = trainers.getActive(d).getText();
+        }
+        catch (ElementNotVisibleException e){
+            System.out.println("Caught exeption and waited");
+            d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            name = trainers.getActive(d).getText();
+        }
+
         String lines[] = name.split("[\r\n]+");
         String deName = lines[0];
-        TrainersPage.deactivateTrainer(d).click();
+        trainers.deactivateTrainer(d).click();
 
-        name = TrainersPage.getInactive(d).getText();
+        name = trainers.getInactive(d).getText();
         String lines1[] = name.split("[\r\n]+");
         for(String n : lines1){
             if(n.equals(deName)) {
@@ -61,11 +90,11 @@ public class TrainersTest {
     @Test(priority = 1)
     public void enterTrainerAndSubmit(){
 
-        TrainersPage.addTrainer(d).click();
-        TrainersPage.inputFirstname(d).sendKeys("Test");
-        TrainersPage.inputLastname(d).sendKeys("Name");
-        TrainersPage.submit(d).click();
-        String x = TrainersPage.getInactive(d).getText();
+        trainers.addTrainer(d).click();
+        trainers.inputFirstname(d).sendKeys("Test");
+        trainers.inputLastname(d).sendKeys("Name");
+        trainers.submit(d).click();
+        String x = trainers.getInactive(d).getText();
         String lines[] = x.split("[\r\n]+");
         for(String name : lines){
             if(name.equals("Test Name")) {
@@ -75,4 +104,5 @@ public class TrainersTest {
             }
         }
     }
+
 }
