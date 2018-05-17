@@ -20,24 +20,6 @@ public class webdriver {
 
 	static Properties props=new Properties();
 
-/*	public static void main(String[] args) {
-
-		openApp();
-
-		trainerLogin();
-
-		//logout();
-
-		goTo_Batches();
-
-		goTo_Settings();
-
-		logout();
-
-
-	
-
-	}*/
 
 	public static WebDriver openApp() {
 
@@ -49,36 +31,23 @@ public class webdriver {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		String site = props.getProperty("url");
-		d.get(site);
-/*
-		//String url = props.getProperty("url");
 
-		//String driver = props.getProperty("driver");
-
-		File chrome = new File("C:\\chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver", chrome.getAbsolutePath());
-
-		//d= new ChromeDriver(options);
-		d= new ChromeDriver();
-		d.get("https://dev.assignforce.revaturelabs.com/home");
-*/
-		d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		return d;
-	}
+			String site = props.getProperty("url");
+			d.get(site);
+			d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			return d;
+		}
 
 	public static void trainerLogin() {
 
 
-		
+
 		String username = props.getProperty("username");
 		String password = props.getProperty("password");
 		//String username = "test.trainer@revature.com.int1";
 		//String password = "trainer123";
 /*
 		//String username = props.getProperty("username");
-
 		//String password = props.getProperty("password");
 		String username = "test.trainer@revature.com.int1";
 		String password = "trainer123";
@@ -125,7 +94,7 @@ public class webdriver {
 
 	public static void goTo_Settings() {
 		d.get("https://dev.assignforce.revaturelabs.com/settings");
-	}	
+	}
 
 	public static void logout() {
 		d.findElement(By.xpath("/html/body/div[1]/div[1]/ng-include/div/md-content/md-nav-bar/div/nav/ul/li[9]/button")).click();

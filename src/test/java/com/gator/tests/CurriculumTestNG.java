@@ -1,14 +1,11 @@
 package com.gator.tests;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 
 import com.gator.pages.ReportsPage;
 
 //import model.Curricula;
 import webdriver.webdriver;
-
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeClass;
 
 import static org.testng.Assert.assertEquals;
 
@@ -19,9 +16,6 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.AfterSuite;
 
 public class CurriculumTestNG {
 	
