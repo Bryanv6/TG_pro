@@ -3,7 +3,6 @@ package com.gator.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.io.FileInputStream;
@@ -46,5 +45,24 @@ public class LocationsPage {
 	public WebElement save_button(WebDriver wd){
 		return wd.findElement(By.xpath(props.getProperty("LocationsPage_save_button")));
 	}
-
+	
+	public WebElement first_checkbox(WebDriver wd) {
+		return wd.findElement(By.xpath(props.getProperty("LocationsPage_first_checkbox")));
+	}
+	
+	public WebElement second_checkbox(WebDriver wd) {
+		return wd.findElement(By.xpath(props.getProperty("LocationsPage_second_checkbox")));
+	}
+	
+	public WebElement delete_button(WebDriver wd) {
+		return wd.findElement(By.xpath(props.getProperty("LocationsPage_delete_button")));
+	}
+	
+	public WebElement cancel_delete_button(WebDriver wd) {
+		return wd.findElement(By.xpath(props.getProperty("LocationsPage_cancel_delete_button")));
+	}
+	
+	public WebElement yes_delete_button(WebDriver wd) {
+		return wd.findElement(By.xpath(props.getProperty("LocationsPage_yes_delete_button")));
+	}
 }

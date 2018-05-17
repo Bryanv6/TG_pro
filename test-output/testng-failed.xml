@@ -5,7 +5,10 @@
     <classes>
       <class name="com.gator.tests.LocationsTest">
         <methods>
-          <include name="addLocation_test"/>
+          <include name="deleteTwoLocations_test"/>
+          <include name="deleteOneLocation_test"/>
+          <include name="closeWebDriver"/>
+          <include name="setUpWebDriver"/>
         </methods>
       </class> <!-- com.gator.tests.LocationsTest -->
     </classes>

@@ -1,16 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="29375" started-at="2018-05-16T20:21:16Z" finished-at="2018-05-16T20:21:45Z">
+  <suite name="Default suite" duration-ms="64646" started-at="2018-05-17T18:32:24Z" finished-at="2018-05-17T18:33:28Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="29375" started-at="2018-05-16T20:21:16Z" finished-at="2018-05-16T20:21:45Z">
+    <test name="Default test" duration-ms="64646" started-at="2018-05-17T18:32:24Z" finished-at="2018-05-17T18:33:28Z">
       <class name="com.gator.tests.LocationsTest">
-        <test-method status="PASS" signature="addLocation_test()[pri:0, instance:com.gator.tests.LocationsTest@73eb439a]" name="addLocation_test" duration-ms="29281" started-at="2018-05-16T20:21:16Z" finished-at="2018-05-16T20:21:45Z">
+        <test-method status="PASS" signature="setUpWebDriver()[pri:0, instance:com.gator.tests.LocationsTest@17d0685f]" name="setUpWebDriver" is-config="true" duration-ms="31657" started-at="2018-05-17T18:32:24Z" finished-at="2018-05-17T18:32:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpWebDriver -->
+        <test-method status="PASS" signature="addLocation_test()[pri:0, instance:com.gator.tests.LocationsTest@17d0685f]" name="addLocation_test" duration-ms="14101" started-at="2018-05-17T18:32:55Z" finished-at="2018-05-17T18:33:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addLocation_test -->
+        <test-method status="PASS" signature="cancelDeleteLocation_test()[pri:0, instance:com.gator.tests.LocationsTest@17d0685f]" name="cancelDeleteLocation_test" duration-ms="5201" started-at="2018-05-17T18:33:09Z" finished-at="2018-05-17T18:33:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cancelDeleteLocation_test -->
+        <test-method status="PASS" signature="deleteOneLocation_test()[pri:0, instance:com.gator.tests.LocationsTest@17d0685f]" name="deleteOneLocation_test" duration-ms="4859" started-at="2018-05-17T18:33:15Z" finished-at="2018-05-17T18:33:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteOneLocation_test -->
+        <test-method status="PASS" signature="deleteTwoLocations_test()[pri:0, instance:com.gator.tests.LocationsTest@17d0685f]" name="deleteTwoLocations_test" duration-ms="6194" started-at="2018-05-17T18:33:20Z" finished-at="2018-05-17T18:33:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTwoLocations_test -->
+        <test-method status="PASS" signature="closeWebDriver()[pri:0, instance:com.gator.tests.LocationsTest@17d0685f]" name="closeWebDriver" is-config="true" duration-ms="2564" started-at="2018-05-17T18:33:26Z" finished-at="2018-05-17T18:33:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeWebDriver -->
       </class> <!-- com.gator.tests.LocationsTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
