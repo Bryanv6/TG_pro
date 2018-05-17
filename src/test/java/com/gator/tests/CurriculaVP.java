@@ -34,7 +34,7 @@ public class CurriculaVP {
 	    
 	
   @Test (priority = 0)
-  public void testCoreSize() throws IOException {
+  public void testAddClick() throws IOException {
 	 //ReportsPage report = new ReportsPage(d);
 	 
 	   d.findElement(By.xpath("//*[@id=\"view\"]/md-card/md-content/md-card[1]/md-toolbar/div/button[1]/md-icon")).click();
