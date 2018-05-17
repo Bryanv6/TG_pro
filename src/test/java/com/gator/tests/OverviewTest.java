@@ -1,5 +1,6 @@
 package com.gator.tests;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -60,10 +61,13 @@ public class OverviewTest {
         op.trainer(d).click();
     }
     @Test
-    public void check_filter_inProgress(){
+    public void check_filter_inProgress() throws InterruptedException {
+        Thread.sleep(20);
         op.filter(d).click();
-        op.in_progress(d).click();
-        //*[@id="menu_container_0"]/md-menu-content/md-menu-item[1]/button/span
+        //Thread.sleep(200);
+        //op.in_progress(d).click();
+        d.findElement(By.cssSelector("button[ng-click=\"hCtrl.batchFilter = 'Active'\"]"));
+
     }
 
 }

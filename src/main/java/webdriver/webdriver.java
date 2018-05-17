@@ -14,30 +14,17 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class webdriver {
 
 	public static ChromeOptions options = new ChromeOptions().addArguments("user-data-dir=C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\User Data");
-	public static  WebDriver d;
+
+	public static  WebDriver d = DriverSingleton.getDriver();
+
+
 	static Properties props=new Properties();
 
-	public static void main(String[] args) {
-
-		openApp();
-
-		trainerLogin();
-
-		//logout();
-
-		goTo_Batches();
-
-		goTo_Settings();
-
-		logout();
-	}
 
 	public static WebDriver openApp() {
-		FileInputStream in;
 
 		try {
-			in = new FileInputStream("src/main/resources/db.properties");
-
+			FileInputStream in = new FileInputStream("src/main/resources/db.properties");
 			props.load(in);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -45,28 +32,26 @@ public class webdriver {
 			e.printStackTrace();
 		}
 
-		String url = props.getProperty("url");
-
-		String driver = props.getProperty("driver");
-
-		File chrome = new File(driver);
-		System.setProperty("webdriver.chrome.driver", chrome.getAbsolutePath());
-
-		d= new ChromeDriver(options);
-		//d= new ChromeDriver();
-		d.get(url);
-		d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-		return d;
-	}
+			String site = props.getProperty("url");
+			d.get(site);
+			d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			return d;
+		}
 
 	public static void trainerLogin() {
 
-		//String username = props.getProperty("username");
 
+
+		String username = props.getProperty("username");
+		String password = props.getProperty("password");
+		//String username = "test.trainer@revature.com.int1";
+		//String password = "trainer123";
+/*
+		//String username = props.getProperty("username");
 		//String password = props.getProperty("password");
 		String username = "test.trainer@revature.com.int1";
 		String password = "trainer123";
+*/
 
 		d.findElement(By.id("username")).sendKeys(username);
 		d.findElement(By.id("password")).sendKeys(password);

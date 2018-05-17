@@ -1,10 +1,6 @@
 package com.gator.tests;
-
 import java.io.File;
-
 import java.io.FileWriter;
-import java.io.IOException;
-
 import org.json.simple.JSONObject;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;

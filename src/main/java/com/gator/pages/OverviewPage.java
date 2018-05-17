@@ -63,16 +63,16 @@ public class OverviewPage {
         return element;
     }
     public static WebElement filter(WebDriver wd){
-        return wd.findElement(By.xpath(props.getProperty("Trainers_page_filter")));
+        return wd.findElement(By.xpath(props.getProperty("Overview_page_filter")));
     }
     public static WebElement in_progress(WebDriver wd){
-        return wd.findElement(By.xpath("Trainers_page_filter_inProgress"));
+        return wd.findElement(By.cssSelector("Overview_page_filter_inProgress"));
     }
     public static WebElement two_weeks(WebDriver wd){
-        return wd.findElement(By.xpath("Trainers_page_filter_twoWeeks"));
+        return wd.findElement(By.cssSelector("Overview_page_filter_twoWeeks"));
     }
     public static WebElement filter_all(WebDriver wd){
-        return wd.findElement(By.xpath("Trainers_page_filter_all"));
+        return wd.findElement(By.cssSelector("Overview_page_filter_all"));
     }
 
 }
