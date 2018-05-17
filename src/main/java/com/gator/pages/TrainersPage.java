@@ -35,11 +35,11 @@ public class TrainersPage {
     }
     //for VP only
     public static WebElement inputFirstname(WebDriver wd){
-        return wd.findElement(By.id(props.getProperty("Trainers_page_inputFirstname")));
+        return wd.findElement(By.xpath(props.getProperty("Trainers_page_inputFirstname")));
     }
     //for VP only
     public static WebElement inputLastname(WebDriver wd){
-        return wd.findElement(By.id(props.getProperty("Trainers_page_inputLastname")));
+        return wd.findElement(By.xpath(props.getProperty("Trainers_page_inputLastname")));
     }
     //for VP only
     public static WebElement submit(WebDriver wd){
@@ -71,6 +71,15 @@ public class TrainersPage {
     }
     public static WebElement getActive(WebDriver wd){
         return wd.findElement(By.xpath(props.getProperty("Trainers_page_getActive")));
+    }
+    public static WebElement newPTOcancel(WebDriver wd){
+        return wd.findElement(By.xpath(props.getProperty("Trainers_page_newPTO_cancel")));
+    }
+    public static WebElement startDate(WebDriver wd){
+        return wd.findElement(By.xpath(props.getProperty("Trainers_page_startDate")));
+    }
+    public static WebElement endDate(WebDriver wd){
+        return wd.findElement(By.xpath(props.getProperty("Trainers_page_endDate")));
     }
 
 

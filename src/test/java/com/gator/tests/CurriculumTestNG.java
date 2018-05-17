@@ -1,7 +1,9 @@
 package com.gator.tests;
-import org.testng.annotations.Test;
+
+import org.testng.annotations.*;
+import com.gator.pages.ReportsPage;
+//import model.Curricula;
 import webdriver.webdriver;
-import org.testng.annotations.BeforeMethod;
 import static org.testng.Assert.assertEquals;
 import java.io.IOException;
 import java.util.StringTokenizer;
