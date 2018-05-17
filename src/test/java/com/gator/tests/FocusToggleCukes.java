@@ -25,8 +25,8 @@ public class FocusToggleCukes {
 		webdriver.trainerLogin();
 	    //d.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 		wait= new WebDriverWait(d, 10);
-		wait.until(elementToBeClickable(By.xpath("//li[@name='curricula']")));
-	   d.findElement(By.xpath("//li[@name='curricula']")).click();
+		wait.until(elementToBeClickable(By.xpath("//li[@name='focus']")));
+	   d.findElement(By.xpath("//li[@name='focus']")).click();
 	}
 	
 	@Given("^I \"([^\"]*)\" on the focus toggle$")

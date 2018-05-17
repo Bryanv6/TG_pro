@@ -2,7 +2,10 @@
 <suite name="Suite" parallel="false">
   <test name="Test">
     <classes>
-      <class name="com.gator.tests.LocationsTest"/>
+      <class name="com.gator.tests.Core_TestRunner"/>
+      <class name="com.gator.tests.Focus_TestRunner"/>
+     <!--  <class name="com.gator.tests.CurriculumTestNG"/>
+      <class name="com.gator.tests.CurriculaVP"/> -->
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
