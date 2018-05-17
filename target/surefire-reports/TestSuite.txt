@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: TestSuite
--------------------------------------------------------------------------------
-Tests run: 30, Failures: 1, Errors: 0, Skipped: 29, Time elapsed: 32.527 s <<< FAILURE! - in TestSuite
-beforeTest(com.gator.tests.BatchesTest)  Time elapsed: 30.499 s  <<< FAILURE!
-java.lang.NullPointerException: null value in entry: url=null
-	at com.gator.tests.BatchesTest.beforeTest(BatchesTest.java:49)
-
