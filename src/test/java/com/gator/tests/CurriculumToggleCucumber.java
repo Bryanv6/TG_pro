@@ -25,14 +25,13 @@ public class CurriculumToggleCucumber {
 		d = webdriver.openApp();
 		webdriver.trainerLogin();
 		wait = new WebDriverWait(d, 10);
-	    d.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		wait.until(elementToBeClickable(By.xpath("//li[@name='curricula']")));
 	   d.findElement(By.xpath("//li[@name='curricula']")).click();
 	}
 	
 	@Given("^I \"([^\"]*)\" on the core toggle$")
 	public void i_on_the_core_toggle(String arg1) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		 d.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		 wait.until(elementToBeClickable(By.xpath("//*[@id=\"coreArrow\"]")));
 		d.findElement(By.xpath("//*[@id=\"coreArrow\"]")).click(); 
 		
@@ -51,7 +50,7 @@ public class CurriculumToggleCucumber {
 	@Then("^a list of core \"([^\"]*)\" should not be displayed$")
 	public void a_list_of_core_should_not_be_displayed(String arg1) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		d.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		
 		wait.until(elementToBeClickable(By.xpath("//*[@id=\"core\"]")));
 		String display = d.findElement(By.xpath("//*[@id=\"core\"]")).getCssValue("display");
 		//System.out.println(display);
@@ -65,7 +64,7 @@ public class CurriculumToggleCucumber {
 		}
 	    //throw new PendingException();
 	    
-		d.close();
+		d.quit();
 	    }
 
 }
